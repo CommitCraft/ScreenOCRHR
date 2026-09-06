@@ -9,10 +9,15 @@ set "PYW_EXE="
 if exist "%~dp0venv\Scripts\pythonw.exe" (
     set "PYW_EXE=%~dp0venv\Scripts\pythonw.exe"
     set "PY_EXE=%~dp0venv\Scripts\python.exe"
+) else if exist "C:\Program Files\Python314\pythonw.exe" (
+    set "PYW_EXE=C:\Program Files\Python314\pythonw.exe"
+    set "PY_EXE=C:\Program Files\Python314\python.exe"
 ) else (
     where pythonw >nul 2>&1 && set "PYW_EXE=pythonw"
     where python >nul 2>&1 && set "PY_EXE=python"
 )
+if "%PYW_EXE%"=="" set "PYW_EXE=pythonw"
+if "%PY_EXE%"=="" set "PY_EXE=python"
 
 :: If ROI is not set yet, ask to select area first
 if not exist "%~dp0roi.json" (

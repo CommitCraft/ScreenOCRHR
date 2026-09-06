@@ -20,6 +20,7 @@ DEBUG_LOG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ocr_d
 
 # Synchronization and single-instance locks
 CSV_LOCK = threading.Lock()
+SYNC_LOCK = threading.Lock()
 STOP_EVENT = threading.Event()
 INSTANCE_LOCK_SOCKET = None
 INSTANCE_LOCK_PORT = 49152
@@ -683,6 +684,30 @@ def update_csv_status(target_sno, new_status):
     return False
 
 
+def get_csv_status(target_sno):
+    """
+    Safely reads the current API Status for a given S.No from ocr_log.csv.
+    """
+    with CSV_LOCK:
+        filename = CONFIG["log_csv"]
+        if not os.path.exists(filename):
+            return "PENDING"
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                reader = csv.reader(f)
+                for row in reader:
+                    if not row or row[0] == "S.No":
+                        continue
+                    if str(row[0]).strip() == str(target_sno).strip():
+                        if len(row) >= 8:
+                            return row[7].strip()
+                        elif len(row) >= 6:
+                            return row[-1].strip()
+        except Exception:
+            pass
+    return "PENDING"
+
+
 # ============================================================
 # 12. SEND VALUE TO NODE-RED API (CONFIRMED DB INSERTION)
 # ============================================================
@@ -749,111 +774,111 @@ def sync_pending_logs_from_csv():
     Reads ocr_log.csv, finds any rows where API Status != 'SENT'
     (e.g. TIMEOUT, CONNECTION_ERROR, FAILED, PENDING),
     checks if Node-RED is online, posts them one-by-one, oldest first,
-    with a 300ms delay to avoid API load, and updates status to 'SENT'
-    only after confirmed DB insertion.
+    and updates status to 'SENT' only after confirmed DB insertion.
+    Strict FIFO order guarantees MySQL auto-increment IDs match chronological capture order!
     """
-    filename = CONFIG["log_csv"]
-    if not os.path.exists(filename):
+    if not SYNC_LOCK.acquire(timeout=2.0):
+        # Already syncing in another thread, avoid concurrent sync collisions
         return 0
 
-    with CSV_LOCK:
-        rows = []
-        try:
-            with open(filename, "r", encoding="utf-8") as f:
-                reader = csv.reader(f)
-                rows = [r for r in reader if r]
-        except Exception as e:
-            log_msg(f"[SYNC ERROR] Failed to read {filename}: {e}")
-            return 0
-
-        if len(rows) <= 1:
-            return 0
-
-        header = rows[0]
-        data_rows = rows[1:]
-
-        status_idx = 7 if len(header) >= 8 else -1
-        if status_idx == -1:
-            return 0
-
-        # Collect unsent rows (data_rows are descending, so index 0 is newest)
-        unsent_indices = []
-        for i, r in enumerate(data_rows):
-            if len(r) > status_idx:
-                status = r[status_idx].strip()
-                if status != "SENT" and not status.startswith("HTTP_2"):
-                    unsent_indices.append(i)
-
-    if not unsent_indices:
-        return 0
-
-    # 1. Health check before mass sync
     try:
-        health_url = f"http://{CONFIG['api_ip']}:{CONFIG['api_port']}/api/screen-ocr/status"
-        h_resp = requests.get(health_url, timeout=2.0)
-        if h_resp.status_code != 200:
-            log_msg(f"[SYNC NOTICE] Server returned HTTP {h_resp.status_code}. Retry next cycle.")
+        filename = CONFIG["log_csv"]
+        if not os.path.exists(filename):
             return 0
-    except Exception:
-        log_msg("[SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.")
-        return 0
 
-    log_msg(f"[SYNC] Found {len(unsent_indices)} pending/failed log(s) in CSV. Syncing to DB oldest-first...")
-
-    synced_count = 0
-    updated = False
-
-    # Sync chronologically (oldest first)
-    for idx in reversed(unsent_indices):
-        if STOP_EVENT.is_set():
-            break
-
-        r = data_rows[idx]
-        sno = r[0]
-        date_str = r[1]
-        time_str = r[2]
-        m_name = r[3] if len(r) > 3 else CONFIG["machine_name"]
-        l_name = r[4] if len(r) > 4 else CONFIG["line_name"]
-        val = r[5] if len(r) > 5 else ""
-        prev = r[6] if len(r) > 6 else "-"
-        timestamp = f"{date_str} {time_str}"
-
-        res = send_to_api(
-            value=val,
-            previous_value=prev if prev != "-" else None,
-            timestamp=timestamp,
-            machine_name=m_name,
-            line_name=l_name
-        )
-
-        if res == "SENT":
-            data_rows[idx][status_idx] = "SENT"
-            synced_count += 1
-            updated = True
-            log_msg(f"[SYNC OK] S.No {sno}: Value '{val}' (from {timestamp}) successfully synced to DB.")
-            # 300ms delay to prevent server / API congestion
-            time.sleep(0.3)
-        else:
-            log_msg(f"[SYNC PAUSED] API returned '{res}' for S.No {sno}. Will retry remaining on next cycle.")
-            break
-
-    if updated:
         with CSV_LOCK:
+            rows = []
             try:
-                temp_file = filename + ".tmp"
-                with open(temp_file, "w", newline="", encoding="utf-8") as f:
-                    writer = csv.writer(f)
-                    writer.writerow(header)
-                    writer.writerows(data_rows)
-                os.replace(temp_file, filename)
-                log_msg(f"[SYNC COMPLETE] Updated {synced_count} row(s) to 'SENT' in {os.path.basename(filename)}.")
+                with open(filename, "r", encoding="utf-8") as f:
+                    reader = csv.reader(f)
+                    rows = [r for r in reader if r]
             except Exception as e:
-                log_msg(f"[SYNC ERROR] Failed to save updated CSV: {e}")
+                log_msg(f"[SYNC ERROR] Failed to read {filename}: {e}")
+                return 0
 
-    # Perform DB audit check to confirm counts match
-    verify_audit_with_api()
+            if len(rows) <= 1:
+                return 0
 
-    return synced_count
+            header = rows[0]
+            data_rows = rows[1:]
+
+            status_idx = 7 if len(header) >= 8 else -1
+            if status_idx == -1:
+                return 0
+
+            # Collect unsent rows (data_rows are descending, so index 0 is newest)
+            unsent_indices = []
+            for i, r in enumerate(data_rows):
+                if len(r) > status_idx:
+                    status = r[status_idx].strip()
+                    if status != "SENT" and not status.startswith("HTTP_2"):
+                        unsent_indices.append(i)
+
+        if not unsent_indices:
+            return 0
+
+        # 1. Health check before mass sync
+        try:
+            health_url = f"http://{CONFIG['api_ip']}:{CONFIG['api_port']}/api/screen-ocr/status"
+            h_resp = requests.get(health_url, timeout=2.0)
+            if h_resp.status_code != 200:
+                log_msg(f"[SYNC NOTICE] Server returned HTTP {h_resp.status_code}. Retry next cycle.")
+                return 0
+        except Exception:
+            # If server is offline, mark first unsent item as CONNECTION_ERROR if it was PENDING
+            first_idx = unsent_indices[-1]  # oldest unsent
+            first_sno = data_rows[first_idx][0]
+            update_csv_status(first_sno, "CONNECTION_ERROR")
+            log_msg("[SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.")
+            return 0
+
+        if len(unsent_indices) > 1:
+            log_msg(f"[SYNC] Found {len(unsent_indices)} pending/failed log(s) in CSV. Syncing to DB oldest-first (FIFO)...")
+
+        synced_count = 0
+
+        # Sync chronologically (oldest first)
+        for idx in reversed(unsent_indices):
+            if STOP_EVENT.is_set():
+                break
+
+            r = data_rows[idx]
+            sno = r[0]
+            date_str = r[1]
+            time_str = r[2]
+            m_name = r[3] if len(r) > 3 else CONFIG["machine_name"]
+            l_name = r[4] if len(r) > 4 else CONFIG["line_name"]
+            val = r[5] if len(r) > 5 else ""
+            prev = r[6] if len(r) > 6 else "-"
+            timestamp = f"{date_str} {time_str}"
+
+            res = send_to_api(
+                value=val,
+                previous_value=prev if prev != "-" else None,
+                timestamp=timestamp,
+                machine_name=m_name,
+                line_name=l_name
+            )
+
+            if res == "SENT":
+                update_csv_status(sno, "SENT")
+                synced_count += 1
+                if len(unsent_indices) > 1:
+                    log_msg(f"[SYNC OK] S.No {sno}: Value '{val}' (from {timestamp}) successfully synced to DB.")
+                    time.sleep(0.2)
+            else:
+                update_csv_status(sno, res)
+                log_msg(f"[SYNC PAUSED] API returned '{res}' for S.No {sno}. Will retry remaining on next cycle.")
+                break
+
+        if synced_count > 1:
+            log_msg(f"[SYNC COMPLETE] Synchronized {synced_count} pending row(s) to DB in strict chronological sequence.")
+            verify_audit_with_api()
+
+        return synced_count
+
+    finally:
+        SYNC_LOCK.release()
 
 
 def sync_worker_loop():
@@ -1166,22 +1191,15 @@ def main():
 
 
                         # ========================================
-                        # 2. ATTEMPT IMMEDIATE SEND IF ONLINE
+                        # 2. FLUSH PENDING QUEUE IN STRICT FIFO ORDER!
                         # ========================================
-
+                        # Rather than sending new reading immediately and jumping ahead
+                        # of older pending logs, we drain pending logs in strict FIFO order!
+                        # This guarantees MySQL auto-increment IDs match chronological sequence.
                         api_status = "PENDING"
                         if CONFIG["immediate_send"]:
-                            res = send_to_api(
-                                stable_value,
-                                last_accepted_value,
-                                timestamp=f"{current_date} {current_time}"
-                            )
-                            if res == "SENT":
-                                api_status = "SENT"
-                                update_csv_status(current_saved_sno, "SENT")
-                            else:
-                                api_status = res
-                                update_csv_status(current_saved_sno, res)
+                            sync_pending_logs_from_csv()
+                            api_status = get_csv_status(current_saved_sno)
 
 
                         # ========================================
@@ -1232,10 +1250,8 @@ def main():
                             last_heartbeat = now
 
 
-                except Exception:
-
-                    # Never crash because of temporary
-                    # screen capture / OCR problem
+                except Exception as e:
+                    log_msg(f"[CAPTURE LOOP EXCEPTION] {e}")
                     time.sleep(1)
 
                 elapsed = (
