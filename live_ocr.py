@@ -1,4 +1,4 @@
-﻿import os
+import os
 import sys
 import json
 import time
@@ -52,10 +52,65 @@ for path in TESSERACT_CANDIDATES:
 
 
 # ============================================================
-# 3. CONFIGURATION
+# 3. ENVIRONMENT & CONFIGURATION
 # ============================================================
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+def load_env_file(dotenv_path=None):
+    """
+    Load environment variables from .env file into os.environ.
+    Zero external dependencies required.
+    """
+    if dotenv_path is None:
+        dotenv_path = os.path.join(BASE_DIR, ".env")
+
+    if not os.path.exists(dotenv_path):
+        return
+
+    try:
+        with open(dotenv_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                if "=" in line:
+                    key, val = line.split("=", 1)
+                    key = key.strip()
+                    val = val.strip()
+                    # Strip wrapping quotes if any
+                    if (val.startswith('"') and val.endswith('"')) or (
+                        val.startswith("'") and val.endswith("'")
+                    ):
+                        val = val[1:-1]
+                    os.environ[key] = val
+    except Exception:
+        pass
+
+
+# Load .env file on startup
+load_env_file()
+
+# Machine & Line Details from .env
+MACHINE_NAME = os.getenv("MACHINE_NAME", "MC-04").strip()
+LINE_NAME = os.getenv("LINE_NAME", "Line-01").strip()
+
+# API Configuration from .env
+API_IP = os.getenv("API_IP", "127.0.0.1").strip()
+API_PORT = os.getenv("API_PORT", "1880").strip()
+API_ENDPOINT = os.getenv("API_ENDPOINT", "/screen-ocr-mc04").strip()
+try:
+    API_TIMEOUT = float(os.getenv("API_TIMEOUT", "3").strip())
+except Exception:
+    API_TIMEOUT = 3.0
+
+# Ensure leading slash in endpoint
+if not API_ENDPOINT.startswith("/"):
+    API_ENDPOINT = "/" + API_ENDPOINT
+
+# Build full API URL
+API_URL = f"http://{API_IP}:{API_PORT}{API_ENDPOINT}"
 
 CONFIG = {
 
@@ -91,13 +146,19 @@ CONFIG = {
     "scale": 4,
 
     # ========================================================
-    # NODE-RED API
+    # MACHINE & LINE
     # ========================================================
+    "machine_name": MACHINE_NAME,
+    "line_name": LINE_NAME,
 
-    # Node-RED same computer par hai:
-    "api_url": "http://0.0.0.0:1880/screen-ocr-mc04",
-
-    "api_timeout": 3
+    # ========================================================
+    # API SETTINGS
+    # ========================================================
+    "api_ip": API_IP,
+    "api_port": API_PORT,
+    "api_endpoint": API_ENDPOINT,
+    "api_url": API_URL,
+    "api_timeout": API_TIMEOUT
 }
 
 
@@ -105,6 +166,8 @@ CSV_HEADERS = [
     "S.No",
     "Date",
     "Time",
+    "Machine Name",
+    "Line",
     "Detected Value",
     "Previous Value",
     "API Status"
@@ -527,8 +590,15 @@ def save_csv(
     time_str,
     value,
     previous,
-    api_status
+    api_status,
+    machine_name=None,
+    line_name=None
 ):
+
+    if machine_name is None:
+        machine_name = CONFIG["machine_name"]
+    if line_name is None:
+        line_name = CONFIG["line_name"]
 
     filename = CONFIG["log_csv"]
 
@@ -548,8 +618,18 @@ def save_csv(
 
                 for row in reader:
 
-                    if row and row[0] != "S.No":
-                        existing.append(row)
+                    if not row or row[0] == "S.No":
+                        continue
+
+                    # Backward compatibility for existing CSV rows
+                    if len(row) == 5:
+                        # Old format: S.No, Date, Time, Detected Value, Previous Value
+                        row = [row[0], row[1], row[2], machine_name, line_name, row[3], row[4], "-"]
+                    elif len(row) == 6:
+                        # Old format: S.No, Date, Time, Detected Value, Previous Value, API Status
+                        row = [row[0], row[1], row[2], machine_name, line_name, row[3], row[4], row[5]]
+
+                    existing.append(row)
 
         except Exception:
             pass
@@ -558,6 +638,8 @@ def save_csv(
         sno,
         date_str,
         time_str,
+        machine_name,
+        line_name,
         value,
         previous if previous is not None else "-",
         api_status
@@ -592,6 +674,8 @@ def save_csv(
 def send_to_api(value, previous_value):
 
     payload = {
+        "machine_name": CONFIG["machine_name"],
+        "line_name": CONFIG["line_name"],
         "value": value,
         "previous_value": (
             previous_value

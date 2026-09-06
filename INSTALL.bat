@@ -111,8 +111,18 @@ if not exist "%INSTALL_DIR%" (
 copy /Y "%SOURCE_DIR%live_ocr.py" "%INSTALL_DIR%\live_ocr.py" >nul
 copy /Y "%SOURCE_DIR%roi.json" "%INSTALL_DIR%\roi.json" >nul
 
+if exist "%SOURCE_DIR%.env.example" (
+    copy /Y "%SOURCE_DIR%.env.example" "%INSTALL_DIR%\.env.example" >nul
+)
+
+if exist "%SOURCE_DIR%.env" (
+    if not exist "%INSTALL_DIR%\.env" (
+        copy /Y "%SOURCE_DIR%.env" "%INSTALL_DIR%\.env" >nul
+    )
+)
+
 echo.
-echo Files copied successfully.
+echo Files copied successfully (.env, live_ocr.py, roi.json).
 echo.
 
 
