@@ -1,0 +1,191 @@
+[
+    {
+        "id": "tab_screen_ocr_db",
+        "type": "tab",
+        "label": "Screen OCR Multi-Machine DB",
+        "disabled": false,
+        "info": "Multi-Machine Screen OCR Data Receiver & Database Logger.\nCollects readings from all machines and stores them into database tables:\n1. machine_ocr_logs (Full historical log)\n2. machine_current_status (Latest live value per machine)"
+    },
+    {
+        "id": "comment_header",
+        "type": "comment",
+        "z": "tab_screen_ocr_db",
+        "name": "=== MULTI-MACHINE SCREEN OCR TO DATABASE FLOW ===",
+        "info": "This flow receives OCR readings from multiple machine clients and logs them into a MySQL / SQLite database.\n\nAll machines can send to: POST /api/screen-ocr\nPayload:\n{\n  \"machine_name\": \"MC-04\",\n  \"line_name\": \"Line-01\",\n  \"value\": \"150\",\n  \"previous_value\": \"140\",\n  \"timestamp\": \"2026-09-06 22:17:38\"\n}",
+        "x": 260,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "http_in_api",
+        "type": "http in",
+        "z": "tab_screen_ocr_db",
+        "name": "POST /api/screen-ocr",
+        "url": "/api/screen-ocr",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "fn_extract_and_validate"
+            ]
+        ]
+    },
+    {
+        "id": "http_in_legacy",
+        "type": "http in",
+        "z": "tab_screen_ocr_db",
+        "name": "POST /screen-ocr-mc04",
+        "url": "/screen-ocr-mc04",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "fn_extract_and_validate"
+            ]
+        ]
+    },
+    {
+        "id": "http_in_param",
+        "type": "http in",
+        "z": "tab_screen_ocr_db",
+        "name": "POST /screen-ocr/:machine",
+        "url": "/screen-ocr/:machine",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "fn_extract_and_validate"
+            ]
+        ]
+    },
+    {
+        "id": "fn_extract_and_validate",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Validate & Extract Machine Data",
+        "func": "// Extract payload or default\nlet data = msg.payload || {};\n\n// Machine Name: from payload or URL param or default\nlet machine = data.machine_name || (msg.req.params && msg.req.params.machine) || \"MC-UNKNOWN\";\nlet line = data.line_name || \"Line-01\";\nlet value = data.value !== undefined ? String(data.value).trim() : \"\";\nlet prevValue = data.previous_value !== undefined && data.previous_value !== null ? String(data.previous_value).trim() : null;\nlet timestamp = data.timestamp || new Date().toISOString().slice(0, 19).replace('T', ' ');\n\n// Basic validation\nif (!value) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: \"ERROR\",\n        message: \"Value field is required and cannot be empty\"\n    };\n    node.error(\"Received empty OCR value from machine: \" + machine, msg);\n    return [null, msg, null];\n}\n\n// Store normalized data\nmsg.ocr_data = {\n    machine_name: machine,\n    line_name: line,\n    value: value,\n    previous_value: prevValue,\n    timestamp: timestamp\n};\n\n// 1. Immediate HTTP Response (Output 1)\nlet responseMsg = {\n    _msgid: msg._msgid,\n    req: msg.req,\n    res: msg.res,\n    statusCode: 200,\n    payload: {\n        status: \"SUCCESS\",\n        machine_name: machine,\n        line_name: line,\n        detected_value: value,\n        previous_value: prevValue,\n        received_at: timestamp\n    }\n};\n\n// 2. MySQL / SQL Query 1: Insert into Historical Logs (Output 2)\nlet insertLogMsg = {\n    _msgid: msg._msgid,\n    topic: \"INSERT INTO machine_ocr_logs (machine_name, line_name, detected_value, previous_value, captured_at) VALUES (?, ?, ?, ?, ?);\",\n    payload: [machine, line, value, prevValue, timestamp],\n    ocr_data: msg.ocr_data\n};\n\n// 3. MySQL / SQL Query 2: Upsert into Live Current Status (Output 3)\nlet upsertStatusMsg = {\n    _msgid: msg._msgid,\n    topic: \"INSERT INTO machine_current_status (machine_name, line_name, latest_value, previous_value, last_updated) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE latest_value=VALUES(latest_value), previous_value=VALUES(previous_value), last_updated=VALUES(last_updated);\",\n    payload: [machine, line, value, prevValue, timestamp],\n    ocr_data: msg.ocr_data\n};\n\n// 4. Debug output for node status\nnode.status({ fill: \"green\", shape: \"dot\", text: machine + \" (\" + line + \"): \" + value });\n\n// Return: [HTTP Response, Insert Log, Upsert Status]\nreturn [responseMsg, insertLogMsg, upsertStatusMsg];",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 200,
+        "wires": [
+            [
+                "http_response_node"
+            ],
+            [
+                "mysql_insert_log",
+                "debug_log_msg"
+            ],
+            [
+                "mysql_upsert_status"
+            ]
+        ]
+    },
+    {
+        "id": "http_response_node",
+        "type": "http response",
+        "z": "tab_screen_ocr_db",
+        "name": "HTTP 200 Response",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 800,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "debug_log_msg",
+        "type": "debug",
+        "z": "tab_screen_ocr_db",
+        "name": "Live Machine Reading Log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "ocr_data",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "mysql_insert_log",
+        "type": "mysql",
+        "z": "tab_screen_ocr_db",
+        "mydb": "mysql_cfg_screen_ocr",
+        "name": "DB: Insert machine_ocr_logs",
+        "x": 830,
+        "y": 260,
+        "wires": [
+            [
+                "debug_db_success"
+            ]
+        ]
+    },
+    {
+        "id": "mysql_upsert_status",
+        "type": "mysql",
+        "z": "tab_screen_ocr_db",
+        "mydb": "mysql_cfg_screen_ocr",
+        "name": "DB: Update machine_current_status",
+        "x": 850,
+        "y": 320,
+        "wires": [
+            [
+                "debug_db_success"
+            ]
+        ]
+    },
+    {
+        "id": "debug_db_success",
+        "type": "debug",
+        "z": "tab_screen_ocr_db",
+        "name": "DB Insert Result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 290,
+        "wires": []
+    },
+    {
+        "id": "comment_mysql_note",
+        "type": "comment",
+        "z": "tab_screen_ocr_db",
+        "name": "NOTE: Double-click MySQL node to configure Host, User, Password & Database",
+        "info": "To connect your MySQL / MariaDB:\n1. Double-click either DB node ('DB: Insert machine_ocr_logs' or 'DB: Update machine_current_status')\n2. Click the pencil icon next to 'Database'\n3. Set:\n   - Host: 127.0.0.1 (or database server IP)\n   - Port: 3306\n   - User: root (or your db username)\n   - Password: your_password\n   - Database: ocr_db\n4. Click Update -> Deploy",
+        "x": 370,
+        "y": 390,
+        "wires": []
+    },
+    {
+        "id": "mysql_cfg_screen_ocr",
+        "type": "MySQLdatabase",
+        "name": "OCR_Database",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "ocr_db",
+        "tz": "",
+        "charset": "UTF8"
+    }
+]

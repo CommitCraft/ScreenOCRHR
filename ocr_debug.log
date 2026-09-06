@@ -1,0 +1,120 @@
+[2026-09-06 23:28:53] Test log message
+[2026-09-06 23:29:52] ============================================================
+[2026-09-06 23:29:52]             APLOS SCREEN OCR - LIVE MONITOR
+[2026-09-06 23:29:52] ============================================================
+[2026-09-06 23:29:52]  Location    : C:\ScreenOCR
+[2026-09-06 23:29:52]  Machine     : MC-04 (Line: Line-01)
+[2026-09-06 23:29:52]  API URL     : http://127.0.0.1:1880/api/screen-ocr
+[2026-09-06 23:29:52]  Log CSV     : C:\ScreenOCR\ocr_log.csv
+[2026-09-06 23:29:52] [INFO] Manual ROI selection requested (--select)...
+[2026-09-06 23:30:18] [OK] New ROI saved to roi.json: X=1851, Y=1027, W=26, H=24
+[2026-09-06 23:30:18] [TEST SUCCESS] Instantly detected number: '29' in selected box!
+[2026-09-06 23:30:18] [OK] ROI selection completed and saved to roi.json.
+[2026-09-06 23:30:19] ============================================================
+[2026-09-06 23:30:19]             APLOS SCREEN OCR - LIVE MONITOR
+[2026-09-06 23:30:19] ============================================================
+[2026-09-06 23:30:19]  Location    : C:\ScreenOCR
+[2026-09-06 23:30:19]  Machine     : MC-04 (Line: Line-01)
+[2026-09-06 23:30:19]  API URL     : http://127.0.0.1:1880/api/screen-ocr
+[2026-09-06 23:30:19]  Log CSV     : C:\ScreenOCR\ocr_log.csv
+[2026-09-06 23:30:19]  Active ROI  : X=1851, Y=1027, W=26, H=24
+[2026-09-06 23:30:19]  Tesseract   : C:\Program Files\Tesseract-OCR\tesseract.exe
+[2026-09-06 23:30:19] ============================================================
+[2026-09-06 23:30:19] [INFO] Live monitoring started. Press Ctrl+C in this window to stop.
+[2026-09-06 23:30:19] ------------------------------------------------------------
+[2026-09-06 23:30:20] [23:30:20] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: None)
+[2026-09-06 23:30:21] [23:30:21] Detected:     30 | Prev:      - | API: SENT             | CSV S.No: 2
+[2026-09-06 23:30:25] [23:30:25] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-06 23:30:29] [23:30:29] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-06 23:30:33] [23:30:33] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-06 23:30:37] [23:30:37] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-06 23:30:42] [23:30:42] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-06 23:30:46] [23:30:46] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-06 23:30:50] [23:30:50] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-06 23:30:55] [23:30:55] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-06 23:30:59] [23:30:59] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-06 23:31:00] [23:31:00] Detected:    311 | Prev:     30 | API: SENT             | CSV S.No: 3
+[2026-09-06 23:31:04] [23:31:04] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:09] [23:31:09] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:13] [23:31:13] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:17] [23:31:17] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:21] [23:31:21] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:25] [23:31:25] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:30] [23:31:30] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:34] [23:31:34] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:38] [23:31:38] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:42] [23:31:42] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:46] [23:31:46] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:50] [23:31:50] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:55] [23:31:55] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:31:59] [23:31:59] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-06 23:32:00] [23:32:00] Detected:     32 | Prev:    311 | API: SENT             | CSV S.No: 4
+[2026-09-06 23:32:05] [23:32:05] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:09] [23:32:09] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:13] [23:32:13] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:18] [23:32:18] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:22] [23:32:22] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:26] [23:32:26] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:30] [23:32:30] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:34] [23:32:34] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:39] [23:32:39] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:43] [23:32:43] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:47] [23:32:47] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:51] [23:32:51] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:32:55] [23:32:55] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:33:00] [23:33:00] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-06 23:33:01] [23:33:01] Detected:     33 | Prev:     32 | API: SENT             | CSV S.No: 5
+[2026-09-06 23:33:05] [23:33:05] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:09] [23:33:09] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:14] [23:33:14] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:18] [23:33:18] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:22] [23:33:22] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:26] [23:33:26] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:31] [23:33:31] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:35] [23:33:35] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:39] [23:33:39] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:43] [23:33:43] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:47] [23:33:47] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:51] [23:33:51] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:55] [23:33:55] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:33:59] [23:33:59] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-06 23:34:00] [23:34:00] Detected:    734 | Prev:     33 | API: SENT             | CSV S.No: 6
+[2026-09-06 23:34:04] [23:34:04] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:09] [23:34:09] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:13] [23:34:13] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:17] [23:34:17] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:21] [23:34:21] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:25] [23:34:25] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:29] [23:34:29] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:34] [23:34:34] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:38] [23:34:38] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:42] [23:34:42] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:46] [23:34:46] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:50] [23:34:50] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:55] [23:34:55] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:34:59] [23:34:59] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-06 23:35:01] [23:35:01] Detected:     35 | Prev:    734 | API: SENT             | CSV S.No: 7
+[2026-09-06 23:35:05] [23:35:05] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:09] [23:35:09] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:13] [23:35:13] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:17] [23:35:17] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:21] [23:35:21] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:25] [23:35:25] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:29] [23:35:29] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:33] [23:35:33] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:37] [23:35:37] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:41] [23:35:41] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:46] [23:35:46] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:50] [23:35:50] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:54] [23:35:54] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:35:58] [23:35:58] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-06 23:36:01] [23:36:01] Detected:     36 | Prev:     35 | API: SENT             | CSV S.No: 8
+[2026-09-06 23:36:05] [23:36:05] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-06 23:36:09] [23:36:09] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-06 23:36:13] [23:36:13] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-06 23:36:17] [23:36:17] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-06 23:36:22] [23:36:22] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-06 23:36:26] [23:36:26] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-06 23:36:30] [23:36:30] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-06 23:36:34] [23:36:34] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-06 23:36:38] [23:36:38] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)

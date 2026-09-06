@@ -108,16 +108,18 @@ if not exist "%INSTALL_DIR%" (
     mkdir "%INSTALL_DIR%"
 )
 
-copy /Y "%SOURCE_DIR%live_ocr.py" "%INSTALL_DIR%\live_ocr.py" >nul
-copy /Y "%SOURCE_DIR%roi.json" "%INSTALL_DIR%\roi.json" >nul
+if /i not "%SOURCE_DIR%"=="%INSTALL_DIR%\" if /i not "%SOURCE_DIR%"=="%INSTALL_DIR%" (
+    copy /Y "%SOURCE_DIR%live_ocr.py" "%INSTALL_DIR%\live_ocr.py" >nul
+    copy /Y "%SOURCE_DIR%roi.json" "%INSTALL_DIR%\roi.json" >nul
 
-if exist "%SOURCE_DIR%.env.example" (
-    copy /Y "%SOURCE_DIR%.env.example" "%INSTALL_DIR%\.env.example" >nul
-)
+    if exist "%SOURCE_DIR%.env.example" (
+        copy /Y "%SOURCE_DIR%.env.example" "%INSTALL_DIR%\.env.example" >nul
+    )
 
-if exist "%SOURCE_DIR%.env" (
-    if not exist "%INSTALL_DIR%\.env" (
-        copy /Y "%SOURCE_DIR%.env" "%INSTALL_DIR%\.env" >nul
+    if exist "%SOURCE_DIR%.env" (
+        if not exist "%INSTALL_DIR%\.env" (
+            copy /Y "%SOURCE_DIR%.env" "%INSTALL_DIR%\.env" >nul
+        )
     )
 )
 
@@ -579,7 +581,7 @@ echo NO ROI SELECTION
 echo.
 echo Node-RED API:
 echo.
-echo     http://0.0.0.0:1880/screen-ocr
+echo     http://0.0.0.0:1880/api/screen-ocr
 echo.
 echo Node-RED can listen on:
 echo.

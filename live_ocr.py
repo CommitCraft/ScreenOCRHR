@@ -14,6 +14,24 @@ import pytesseract
 import requests
 
 
+DEBUG_LOG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ocr_debug.log")
+
+
+def log_msg(msg):
+    """Safely write logs to stdout if available and append to ocr_debug.log."""
+    if sys.stdout is not None:
+        try:
+            print(msg, flush=True)
+        except Exception:
+            pass
+
+    try:
+        with open(DEBUG_LOG_FILE, "a", encoding="utf-8") as f:
+            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {msg}\n")
+    except Exception:
+        pass
+
+
 # ============================================================
 # 1. WINDOWS HIGH DPI
 # ============================================================
@@ -138,8 +156,8 @@ CONFIG = {
     "stable_required": 2,
     "history_size": 3,
 
-    # Yellow color range
-    "yellow_lower": [15, 80, 80],
+    # Yellow color range (tolerant to lighting/shades)
+    "yellow_lower": [12, 60, 60],
     "yellow_upper": [45, 255, 255],
 
     # OCR resize
@@ -181,13 +199,20 @@ CSV_HEADERS = [
 def check_tesseract():
 
     if not TESSERACT_FOUND:
+        log_msg("[ERROR] Tesseract OCR executable not found!")
+        log_msg("        Searched paths:")
+        for candidate in TESSERACT_CANDIDATES:
+            if candidate:
+                log_msg(f"          - {candidate}")
+        log_msg("        Please install Tesseract-OCR to C:\\Program Files\\Tesseract-OCR\\tesseract.exe")
         return False
 
     try:
         pytesseract.get_tesseract_version()
         return True
 
-    except Exception:
+    except Exception as e:
+        log_msg(f"[ERROR] Failed to run Tesseract OCR: {e}")
         return False
 
 
@@ -234,7 +259,7 @@ def load_saved_roi():
 
 def select_roi_fullscreen():
 
-    with mss.mss() as sct:
+    with mss.MSS() as sct:
 
         monitor = sct.monitors[1]
 
@@ -294,8 +319,23 @@ def select_roi_fullscreen():
                 indent=2
             )
 
-    except Exception:
-        pass
+        log_msg(f"[OK] New ROI saved to roi.json: X={x}, Y={y}, W={w}, H={h}")
+
+        # Immediate test OCR on selected area
+        try:
+            cropped = image[y:y+h, x:x+w]
+            proc = preprocess_yellow_number(cropped)
+            test_val = read_number(proc)
+            if test_val:
+                log_msg(f"[TEST SUCCESS] Instantly detected number: '{test_val}' in selected box!")
+            else:
+                log_msg(f"[TEST NOTICE] No yellow digits found in selected area right now.")
+                log_msg(f"              If number appears later, OCR will detect it automatically.")
+        except Exception:
+            pass
+
+    except Exception as e:
+        log_msg(f"[ERROR] Failed to save roi.json: {e}")
 
     return data
 
@@ -305,123 +345,52 @@ def select_roi_fullscreen():
 # ============================================================
 
 def preprocess_yellow_number(image):
+    if image is None or image.size == 0:
+        return None
 
     try:
-
-        # BGR -> HSV
-        hsv = cv2.cvtColor(
-            image,
-            cv2.COLOR_BGR2HSV
-        )
-
-        lower = np.array(
-            CONFIG["yellow_lower"],
-            dtype=np.uint8
-        )
-
-        upper = np.array(
-            CONFIG["yellow_upper"],
-            dtype=np.uint8
-        )
-
-        # Extract yellow pixels
-        mask = cv2.inRange(
-            hsv,
-            lower,
-            upper
-        )
-
-        # Remove small noise
-        kernel = np.ones(
-            (2, 2),
-            np.uint8
-        )
-
-        mask = cv2.morphologyEx(
-            mask,
-            cv2.MORPH_OPEN,
-            kernel
-        )
-
-        # Join digit pixels
-        mask = cv2.dilate(
-            mask,
-            kernel,
-            iterations=1
-        )
+        # 1. Try Yellow color extraction first (for yellow digits)
+        hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        lower = np.array(CONFIG["yellow_lower"], dtype=np.uint8)
+        upper = np.array(CONFIG["yellow_upper"], dtype=np.uint8)
+        mask = cv2.inRange(hsv, lower, upper)
 
         points = cv2.findNonZero(mask)
 
-        if points is None:
-            return None
+        # If yellow pixels found and sufficient
+        if points is not None and len(points) >= 4:
+            kernel = np.ones((2, 2), np.uint8)
+            mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
+            mask = cv2.dilate(mask, kernel, iterations=1)
+            x, y, w, h = cv2.boundingRect(points)
+            if w >= 2 and h >= 4:
+                px = 6
+                py = 6
+                x1 = max(0, x - px)
+                y1 = max(0, y - py)
+                x2 = min(mask.shape[1], x + w + px)
+                y2 = min(mask.shape[0], y + h + py)
+                digit = mask[y1:y2, x1:x2]
+                digit = cv2.bitwise_not(digit)
+                scale = CONFIG["scale"]
+                digit = cv2.resize(digit, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
+                _, digit = cv2.threshold(digit, 127, 255, cv2.THRESH_BINARY)
+                digit = cv2.copyMakeBorder(digit, 30, 30, 30, 30, cv2.BORDER_CONSTANT, value=255)
+                return digit
 
-        x, y, w, h = cv2.boundingRect(points)
+        # 2. Universal fallback: Grayscale Otsu thresholding (for white, black, green, or any high-contrast digits)
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
-        # Ignore tiny noise
-        if w < 3 or h < 5:
-            return None
-
-        padding_x = 8
-        padding_y = 8
-
-        x1 = max(
-            0,
-            x - padding_x
-        )
-
-        y1 = max(
-            0,
-            y - padding_y
-        )
-
-        x2 = min(
-            mask.shape[1],
-            x + w + padding_x
-        )
-
-        y2 = min(
-            mask.shape[0],
-            y + h + padding_y
-        )
-
-        digit = mask[
-            y1:y2,
-            x1:x2
-        ]
-
-        # Black digits on white
-        digit = cv2.bitwise_not(
-            digit
-        )
+        # Ensure black digits on white background
+        white_pixels = cv2.countNonZero(thresh)
+        total_pixels = thresh.shape[0] * thresh.shape[1]
+        if white_pixels < total_pixels / 2:
+            thresh = cv2.bitwise_not(thresh)
 
         scale = CONFIG["scale"]
-
-        digit = cv2.resize(
-            digit,
-            None,
-            fx=scale,
-            fy=scale,
-            interpolation=cv2.INTER_CUBIC
-        )
-
-        _, digit = cv2.threshold(
-            digit,
-            127,
-            255,
-            cv2.THRESH_BINARY
-        )
-
-        # White padding
-        digit = cv2.copyMakeBorder(
-            digit,
-            30,
-            30,
-            30,
-            30,
-            cv2.BORDER_CONSTANT,
-            value=255
-        )
-
+        digit = cv2.resize(thresh, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
+        digit = cv2.copyMakeBorder(digit, 30, 30, 30, 30, cv2.BORDER_CONSTANT, value=255)
         return digit
 
     except Exception:
@@ -482,7 +451,6 @@ def clean_number(text):
 # ============================================================
 
 def read_number(digit_image):
-
     if digit_image is None:
         return ""
 
@@ -491,46 +459,24 @@ def read_number(digit_image):
     else:
         whitelist = "0123456789"
 
-    # First try PSM 7
-    config = (
-        "--oem 3 "
-        "--psm 7 "
-        f"-c tessedit_char_whitelist={whitelist}"
-    )
-
-    try:
-
-        raw = pytesseract.image_to_string(
-            digit_image,
-            config=config
+    for psm in [7, 8, 6, 10, 13]:
+        config = (
+            "--oem 3 "
+            f"--psm {psm} "
+            f"-c tessedit_char_whitelist={whitelist}"
         )
+        try:
+            raw = pytesseract.image_to_string(
+                digit_image,
+                config=config
+            )
+            value = clean_number(raw)
+            if value:
+                return value
+        except Exception:
+            pass
 
-        value = clean_number(raw)
-
-        if value:
-            return value
-
-    except Exception:
-        pass
-
-    # Second try PSM 8
-    config = (
-        "--oem 3 "
-        "--psm 8 "
-        f"-c tessedit_char_whitelist={whitelist}"
-    )
-
-    try:
-
-        raw = pytesseract.image_to_string(
-            digit_image,
-            config=config
-        )
-
-        return clean_number(raw)
-
-    except Exception:
-        return ""
+    return ""
 
 
 # ============================================================
@@ -752,6 +698,17 @@ def main():
     if not check_tesseract():
         return
 
+    # --------------------------------------------------------
+    # STARTUP BANNER
+    # --------------------------------------------------------
+
+    log_msg("=" * 60)
+    log_msg("            APLOS SCREEN OCR - LIVE MONITOR")
+    log_msg("=" * 60)
+    log_msg(f" Location    : {BASE_DIR}")
+    log_msg(f" Machine     : {CONFIG['machine_name']} (Line: {CONFIG['line_name']})")
+    log_msg(f" API URL     : {CONFIG['api_url']}")
+    log_msg(f" Log CSV     : {CONFIG['log_csv']}")
 
     # --------------------------------------------------------
     # ROI
@@ -760,7 +717,13 @@ def main():
     # Manual ROI selection ONLY if --select passed
     if "--select" in sys.argv:
 
+        log_msg("[INFO] Manual ROI selection requested (--select)...")
         roi = select_roi_fullscreen()
+        if not roi:
+            log_msg("[WARN] No ROI area selected. Exiting.")
+        else:
+            log_msg("[OK] ROI selection completed and saved to roi.json.")
+        return
 
     else:
 
@@ -768,12 +731,19 @@ def main():
         # load saved ROI silently
         roi = load_saved_roi()
 
-
     # IMPORTANT:
     # If ROI missing during silent startup,
     # do NOT show any popup.
     if not roi:
+        log_msg("[ERROR] roi.json not found or invalid.")
+        log_msg("        Please run: python live_ocr.py --select (or SELECT_ROI.bat)")
         return
+
+    log_msg(f" Active ROI  : X={roi['x']}, Y={roi['y']}, W={roi['w']}, H={roi['h']}")
+    log_msg(f" Tesseract   : {getattr(pytesseract.pytesseract, 'tesseract_cmd', 'found')}")
+    log_msg("=" * 60)
+    log_msg("[INFO] Live monitoring started. Press Ctrl+C in this window to stop.")
+    log_msg("------------------------------------------------------------")
 
 
     # --------------------------------------------------------
@@ -781,6 +751,7 @@ def main():
     # --------------------------------------------------------
 
     last_accepted_value = None
+    last_heartbeat = 0.0
 
     history = deque(
         maxlen=CONFIG["history_size"]
@@ -793,7 +764,7 @@ def main():
     # SCREEN CAPTURE
     # --------------------------------------------------------
 
-    with mss.mss() as sct:
+    with mss.MSS() as sct:
 
         while True:
 
@@ -918,8 +889,14 @@ def main():
 
 
                     # ========================================
-                    # UPDATE LAST VALUE
+                    # UPDATE LAST VALUE & LOG
                     # ========================================
+
+                    prev_display = (
+                        last_accepted_value
+                        if last_accepted_value is not None
+                        else "-"
+                    )
 
                     last_accepted_value = (
                         stable_value
@@ -928,6 +905,37 @@ def main():
                     sno += 1
 
                     history.clear()
+
+                    log_msg(
+                        f"[{current_time}] Detected: {stable_value:>6} | "
+                        f"Prev: {str(prev_display):>6} | "
+                        f"API: {api_status:<16} | CSV S.No: {sno - 1}"
+                    )
+
+                    last_heartbeat = time.time()
+
+                else:
+
+                    # Periodic scanning status every 4 seconds
+                    now = time.time()
+                    if now - last_heartbeat >= 4.0:
+                        cur_t = time.strftime("%H:%M:%S")
+                        if value:
+                            log_msg(
+                                f"[{cur_t}] [READING] OCR sees: '{value}' | "
+                                f"Waiting for stability / change (Last sent: {last_accepted_value or 'None'})"
+                            )
+                        elif last_accepted_value is not None:
+                            log_msg(
+                                f"[{cur_t}] [MONITORING] Watching ROI (X={roi['x']}, Y={roi['y']})... "
+                                f"Current Value: {last_accepted_value} (Waiting for next number)"
+                            )
+                        else:
+                            log_msg(
+                                f"[{cur_t}] [WAITING] Scanning ROI (X={roi['x']}, Y={roi['y']}, W={roi['w']}, H={roi['h']})... "
+                                f"No digits visible. (Check target window)"
+                            )
+                        last_heartbeat = now
 
 
             except Exception:
@@ -970,8 +978,10 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:
 
-        pass
+        log_msg("\n[INFO] Screen OCR stopped by user (Ctrl+C).")
 
-    except Exception:
+    except Exception as e:
 
-        pass
+        log_msg(f"\n[CRITICAL ERROR] {e}")
+        import traceback
+        traceback.print_exc()
