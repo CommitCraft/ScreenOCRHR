@@ -4,15 +4,15 @@
         "type": "tab",
         "label": "Screen OCR Multi-Machine DB",
         "disabled": false,
-        "info": "Multi-Machine Screen OCR Data Receiver & Database Logger.\nCollects readings from all machines and stores them into database tables:\n1. machine_ocr_logs (Full historical log)\n2. machine_current_status (Latest live value per machine)"
+        "info": "Multi-Machine Screen OCR Data Receiver, Verification & Database Logger.\nSupports both POST (push reading) and GET (verify readings, live status, and audit logs)."
     },
     {
         "id": "comment_header",
         "type": "comment",
         "z": "tab_screen_ocr_db",
-        "name": "=== MULTI-MACHINE SCREEN OCR TO DATABASE FLOW ===",
-        "info": "This flow receives OCR readings from multiple machine clients and logs them into a MySQL / SQLite database.\n\nAll machines can send to: POST /api/screen-ocr\nPayload:\n{\n  \"machine_name\": \"MC-04\",\n  \"line_name\": \"Line-01\",\n  \"value\": \"150\",\n  \"previous_value\": \"140\",\n  \"timestamp\": \"2026-09-06 22:17:38\"\n}",
-        "x": 260,
+        "name": "=== POST APIS: RECEIVE OCR READINGS ===",
+        "info": "Machines post readings here:\nPOST /api/screen-ocr\nPayload:\n{\n  \"machine_name\": \"MC-04\",\n  \"line_name\": \"Line-01\",\n  \"value\": \"150\",\n  \"previous_value\": \"140\",\n  \"timestamp\": \"2026-09-06 23:40:00\"\n}",
+        "x": 220,
         "y": 60,
         "wires": []
     },
@@ -71,14 +71,14 @@
         "id": "fn_extract_and_validate",
         "type": "function",
         "z": "tab_screen_ocr_db",
-        "name": "Validate & Extract Machine Data",
-        "func": "// Extract payload or default\nlet data = msg.payload || {};\n\n// Machine Name: from payload or URL param or default\nlet machine = data.machine_name || (msg.req.params && msg.req.params.machine) || \"MC-UNKNOWN\";\nlet line = data.line_name || \"Line-01\";\nlet value = data.value !== undefined ? String(data.value).trim() : \"\";\nlet prevValue = data.previous_value !== undefined && data.previous_value !== null ? String(data.previous_value).trim() : null;\nlet timestamp = data.timestamp || new Date().toISOString().slice(0, 19).replace('T', ' ');\n\n// Basic validation\nif (!value) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: \"ERROR\",\n        message: \"Value field is required and cannot be empty\"\n    };\n    node.error(\"Received empty OCR value from machine: \" + machine, msg);\n    return [null, msg, null];\n}\n\n// Store normalized data\nmsg.ocr_data = {\n    machine_name: machine,\n    line_name: line,\n    value: value,\n    previous_value: prevValue,\n    timestamp: timestamp\n};\n\n// 1. Immediate HTTP Response (Output 1)\nlet responseMsg = {\n    _msgid: msg._msgid,\n    req: msg.req,\n    res: msg.res,\n    statusCode: 200,\n    payload: {\n        status: \"SUCCESS\",\n        machine_name: machine,\n        line_name: line,\n        detected_value: value,\n        previous_value: prevValue,\n        received_at: timestamp\n    }\n};\n\n// 2. MySQL / SQL Query 1: Insert into Historical Logs (Output 2)\nlet insertLogMsg = {\n    _msgid: msg._msgid,\n    topic: \"INSERT INTO machine_ocr_logs (machine_name, line_name, detected_value, previous_value, captured_at) VALUES (?, ?, ?, ?, ?);\",\n    payload: [machine, line, value, prevValue, timestamp],\n    ocr_data: msg.ocr_data\n};\n\n// 3. MySQL / SQL Query 2: Upsert into Live Current Status (Output 3)\nlet upsertStatusMsg = {\n    _msgid: msg._msgid,\n    topic: \"INSERT INTO machine_current_status (machine_name, line_name, latest_value, previous_value, last_updated) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE latest_value=VALUES(latest_value), previous_value=VALUES(previous_value), last_updated=VALUES(last_updated);\",\n    payload: [machine, line, value, prevValue, timestamp],\n    ocr_data: msg.ocr_data\n};\n\n// 4. Debug output for node status\nnode.status({ fill: \"green\", shape: \"dot\", text: machine + \" (\" + line + \"): \" + value });\n\n// Return: [HTTP Response, Insert Log, Upsert Status]\nreturn [responseMsg, insertLogMsg, upsertStatusMsg];",
+        "name": "Validate, Cache & Prepare Data",
+        "func": "// Extract payload or default\nlet data = msg.payload || {};\n\n// Machine details\nlet machine = data.machine_name || (msg.req.params && msg.req.params.machine) || \"MC-UNKNOWN\";\nlet line = data.line_name || \"Line-01\";\nlet value = data.value !== undefined ? String(data.value).trim() : \"\";\nlet prevValue = data.previous_value !== undefined && data.previous_value !== null ? String(data.previous_value).trim() : null;\nlet timestamp = data.timestamp || new Date().toISOString().slice(0, 19).replace('T', ' ');\n\n// Basic validation\nif (!value) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: \"ERROR\",\n        message: \"Value field is required and cannot be empty\"\n    };\n    node.error(\"Received empty OCR value from machine: \" + machine, msg);\n    return [msg, null, null];\n}\n\nmsg.ocr_data = {\n    machine_name: machine,\n    line_name: line,\n    value: value,\n    previous_value: prevValue,\n    timestamp: timestamp\n};\n\n// 1. Maintain in-memory flow cache for instant GET verification without database\nlet memoryLogs = flow.get(\"ocr_memory_logs\") || [];\nmemoryLogs.unshift({\n    id: memoryLogs.length + 1,\n    machine_name: machine,\n    line_name: line,\n    detected_value: value,\n    previous_value: prevValue,\n    captured_at: timestamp,\n    received_at: new Date().toISOString().slice(0, 19).replace('T', ' ')\n});\nif (memoryLogs.length > 500) {\n    memoryLogs = memoryLogs.slice(0, 500);\n}\nflow.set(\"ocr_memory_logs\", memoryLogs);\n\n// 2. Maintain machine live status map\nlet statusMap = flow.get(\"machine_status_map\") || {};\nlet count = (statusMap[machine] && statusMap[machine].total_count) ? statusMap[machine].total_count + 1 : 1;\nstatusMap[machine] = {\n    machine_name: machine,\n    line_name: line,\n    latest_value: value,\n    previous_value: prevValue,\n    last_updated: timestamp,\n    total_count: count\n};\nflow.set(\"machine_status_map\", statusMap);\n\n// Output 1: Immediate HTTP Response\nlet responseMsg = {\n    _msgid: msg._msgid,\n    req: msg.req,\n    res: msg.res,\n    statusCode: 200,\n    payload: {\n        status: \"SUCCESS\",\n        machine_name: machine,\n        line_name: line,\n        detected_value: value,\n        previous_value: prevValue,\n        received_at: timestamp\n    }\n};\n\n// Output 2: MySQL Insert into Historical Logs\nlet insertLogMsg = {\n    _msgid: msg._msgid,\n    topic: \"INSERT INTO machine_ocr_logs (machine_name, line_name, detected_value, previous_value, captured_at) VALUES (?, ?, ?, ?, ?);\",\n    payload: [machine, line, value, prevValue, timestamp],\n    ocr_data: msg.ocr_data\n};\n\n// Output 3: MySQL Upsert into Live Current Status\nlet upsertStatusMsg = {\n    _msgid: msg._msgid,\n    topic: \"INSERT INTO machine_current_status (machine_name, line_name, latest_value, previous_value, last_updated) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE latest_value=VALUES(latest_value), previous_value=VALUES(previous_value), last_updated=VALUES(last_updated);\",\n    payload: [machine, line, value, prevValue, timestamp],\n    ocr_data: msg.ocr_data\n};\n\nnode.status({ fill: \"green\", shape: \"dot\", text: machine + \" (\" + line + \"): \" + value });\n\nreturn [responseMsg, insertLogMsg, upsertStatusMsg];",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
+        "x": 490,
         "y": 200,
         "wires": [
             [
@@ -172,11 +172,290 @@
         "id": "comment_mysql_note",
         "type": "comment",
         "z": "tab_screen_ocr_db",
-        "name": "NOTE: Double-click MySQL node to configure Host, User, Password & Database",
-        "info": "To connect your MySQL / MariaDB:\n1. Double-click either DB node ('DB: Insert machine_ocr_logs' or 'DB: Update machine_current_status')\n2. Click the pencil icon next to 'Database'\n3. Set:\n   - Host: 127.0.0.1 (or database server IP)\n   - Port: 3306\n   - User: root (or your db username)\n   - Password: your_password\n   - Database: ocr_db\n4. Click Update -> Deploy",
-        "x": 370,
-        "y": 390,
+        "name": "NOTE: MySQL Configuration (Optional)",
+        "info": "To connect your MySQL / MariaDB:\n1. Double-click DB node\n2. Set Host, Port, User, Password, Database\n3. Click Update -> Deploy",
+        "x": 310,
+        "y": 360,
         "wires": []
+    },
+    {
+        "id": "comment_get_api_header",
+        "type": "comment",
+        "z": "tab_screen_ocr_db",
+        "name": "=== GET APIS: VERIFY DATA & AUDIT FOR MISSED READINGS ===",
+        "info": "GET APIs allow verifying that no data is missed:\n1. GET /api/screen-ocr/verify -> Instant audit check (total count, earliest, latest, zero missing)\n2. GET /api/screen-ocr/status -> Live status of all reporting machines\n3. GET /api/screen-ocr/logs -> Recent historical readings",
+        "x": 300,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "http_in_get_verify",
+        "type": "http in",
+        "z": "tab_screen_ocr_db",
+        "name": "GET /api/screen-ocr/verify",
+        "url": "/api/screen-ocr/verify",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 480,
+        "wires": [
+            [
+                "fn_handle_get_verify"
+            ]
+        ]
+    },
+    {
+        "id": "fn_handle_get_verify",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Audit & Verify Missing Data",
+        "func": "let logs = flow.get(\"ocr_memory_logs\") || [];\nlet statusMap = flow.get(\"machine_status_map\") || {};\nlet query = msg.req.query || {};\nlet targetMachine = query.machine;\n\nlet targetLogs = targetMachine ? logs.filter(l => l.machine_name.toLowerCase() === targetMachine.toLowerCase()) : logs;\n\nlet totalReceived = targetLogs.length;\nlet latestReading = targetLogs.length > 0 ? targetLogs[0] : null;\nlet earliestReading = targetLogs.length > 0 ? targetLogs[targetLogs.length - 1] : null;\n\nmsg.payload = {\n    status: \"SUCCESS\",\n    verification_check: \"DATA_INTEGRITY_AUDIT\",\n    filter_machine: targetMachine || \"ALL\",\n    summary: {\n        total_readings_received: totalReceived,\n        latest_value: latestReading ? latestReading.detected_value : null,\n        latest_timestamp: latestReading ? latestReading.captured_at : null,\n        earliest_timestamp: earliestReading ? earliestReading.captured_at : null,\n        machines_reporting: Object.keys(statusMap)\n    },\n    audit_result: totalReceived > 0 ? \"DATA_LOGGED_AND_VERIFIED\" : \"AWAITING_FIRST_LOG\",\n    note: \"Compare 'total_readings_received' with client ocr_log.csv row count to verify 0 missed.\",\n    timestamp: new Date().toISOString().slice(0, 19).replace('T', ' ')\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 480,
+        "wires": [
+            [
+                "http_response_get"
+            ]
+        ]
+    },
+    {
+        "id": "http_in_get_status",
+        "type": "http in",
+        "z": "tab_screen_ocr_db",
+        "name": "GET /api/screen-ocr/status",
+        "url": "/api/screen-ocr/status",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 540,
+        "wires": [
+            [
+                "fn_handle_get_status"
+            ]
+        ]
+    },
+    {
+        "id": "fn_handle_get_status",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Format Machine Live Status",
+        "func": "let statusMap = flow.get(\"machine_status_map\") || {};\nlet now = Date.now();\n\nlet list = Object.values(statusMap).map(m => {\n    let lastTime = new Date(m.last_updated).getTime();\n    let diffSec = Math.round((now - lastTime) / 1000);\n    return {\n        machine_name: m.machine_name,\n        line_name: m.line_name,\n        latest_value: m.latest_value,\n        previous_value: m.previous_value,\n        last_updated: m.last_updated,\n        total_readings: m.total_count,\n        status: (diffSec > 300 ? \"WARNING_STALE\" : \"ONLINE_ACTIVE\"),\n        seconds_since_last_seen: isNaN(diffSec) ? 0 : diffSec\n    };\n});\n\nmsg.payload = {\n    status: \"SUCCESS\",\n    active_machines_count: list.length,\n    machines: list,\n    timestamp: new Date().toISOString().slice(0, 19).replace('T', ' ')\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 540,
+        "wires": [
+            [
+                "http_response_get"
+            ]
+        ]
+    },
+    {
+        "id": "http_in_get_logs",
+        "type": "http in",
+        "z": "tab_screen_ocr_db",
+        "name": "GET /api/screen-ocr/logs",
+        "url": "/api/screen-ocr/logs",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 600,
+        "wires": [
+            [
+                "fn_handle_get_logs"
+            ]
+        ]
+    },
+    {
+        "id": "fn_handle_get_logs",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Filter & Return Recent Logs",
+        "func": "let logs = flow.get(\"ocr_memory_logs\") || [];\nlet query = msg.req.query || {};\nlet machine = query.machine;\nlet limit = parseInt(query.limit) || 50;\n\nlet filtered = logs;\nif (machine) {\n    filtered = filtered.filter(l => l.machine_name.toLowerCase() === machine.toLowerCase());\n}\n\nlet result = filtered.slice(0, limit);\n\nmsg.payload = {\n    status: \"SUCCESS\",\n    query: {\n        machine: machine || \"ALL\",\n        limit: limit\n    },\n    total_stored_in_cache: filtered.length,\n    returned_count: result.length,\n    logs: result,\n    timestamp: new Date().toISOString().slice(0, 19).replace('T', ' ')\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 600,
+        "wires": [
+            [
+                "http_response_get"
+            ]
+        ]
+    },
+    {
+        "id": "http_response_get",
+        "type": "http response",
+        "z": "tab_screen_ocr_db",
+        "name": "HTTP 200 GET Response",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 810,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "comment_mysql_select_header",
+        "type": "comment",
+        "z": "tab_screen_ocr_db",
+        "name": "=== MYSQL SELECT QUERY APIS: DIRECT DATABASE AUDIT & CHECK ===",
+        "info": "Direct MySQL SELECT Queries to verify stored vs missing records:\n1. GET /api/screen-ocr/db-verify -> Runs SELECT COUNT(*), MAX(captured_at) from machine_ocr_logs\n2. GET /api/screen-ocr/db-logs -> Runs SELECT * FROM machine_ocr_logs ORDER BY id DESC",
+        "x": 310,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "http_in_db_verify",
+        "type": "http in",
+        "z": "tab_screen_ocr_db",
+        "name": "GET /api/screen-ocr/db-verify",
+        "url": "/api/screen-ocr/db-verify",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 740,
+        "wires": [
+            [
+                "fn_prepare_db_verify"
+            ]
+        ]
+    },
+    {
+        "id": "fn_prepare_db_verify",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Build DB Verify SELECT Query",
+        "func": "let machine = (msg.req.query && msg.req.query.machine) || \"MC-04\";\nmsg.target_machine = machine;\nmsg.topic = \"SELECT COUNT(*) as total_db_records, MAX(captured_at) as last_db_captured_at, (SELECT detected_value FROM machine_ocr_logs WHERE machine_name = ? ORDER BY captured_at DESC, id DESC LIMIT 1) as last_db_value FROM machine_ocr_logs WHERE machine_name = ?;\";\nmsg.payload = [machine, machine];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 740,
+        "wires": [
+            [
+                "mysql_select_verify"
+            ]
+        ]
+    },
+    {
+        "id": "mysql_select_verify",
+        "type": "mysql",
+        "z": "tab_screen_ocr_db",
+        "mydb": "mysql_cfg_screen_ocr",
+        "name": "DB: SELECT Count & Max Time",
+        "x": 750,
+        "y": 740,
+        "wires": [
+            [
+                "fn_format_db_verify"
+            ]
+        ]
+    },
+    {
+        "id": "fn_format_db_verify",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Format DB Verify Result",
+        "func": "let rows = msg.payload || [];\nlet row = rows.length > 0 ? rows[0] : {};\nmsg.payload = {\n    status: \"SUCCESS\",\n    source: \"MYSQL_DATABASE_SELECT_QUERY\",\n    machine_name: msg.target_machine,\n    total_db_records: row.total_db_records !== undefined ? Number(row.total_db_records) : 0,\n    last_db_captured_at: row.last_db_captured_at || null,\n    last_db_value: row.last_db_value || null,\n    audit_note: \"Check if client CSV has rows after last_db_captured_at. Any newer rows need to be sent.\",\n    timestamp: new Date().toISOString().slice(0, 19).replace('T', ' ')\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 740,
+        "wires": [
+            [
+                "http_response_get"
+            ]
+        ]
+    },
+    {
+        "id": "http_in_db_logs",
+        "type": "http in",
+        "z": "tab_screen_ocr_db",
+        "name": "GET /api/screen-ocr/db-logs",
+        "url": "/api/screen-ocr/db-logs",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 800,
+        "wires": [
+            [
+                "fn_prepare_db_logs"
+            ]
+        ]
+    },
+    {
+        "id": "fn_prepare_db_logs",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Build DB Logs SELECT Query",
+        "func": "let machine = (msg.req.query && msg.req.query.machine) || \"\";\nlet limit = parseInt(msg.req.query && msg.req.query.limit) || 20;\nmsg.query_meta = { machine: machine || \"ALL\", limit: limit };\nif (machine) {\n    msg.topic = \"SELECT id, machine_name, line_name, detected_value, previous_value, DATE_FORMAT(captured_at, '%Y-%m-%d %H:%i:%s') as captured_at, DATE_FORMAT(created_at, '%Y-%m-%d %H:%i:%s') as created_at FROM machine_ocr_logs WHERE machine_name = ? ORDER BY captured_at DESC, id DESC LIMIT ?;\";\n    msg.payload = [machine, limit];\n} else {\n    msg.topic = \"SELECT id, machine_name, line_name, detected_value, previous_value, DATE_FORMAT(captured_at, '%Y-%m-%d %H:%i:%s') as captured_at, DATE_FORMAT(created_at, '%Y-%m-%d %H:%i:%s') as created_at FROM machine_ocr_logs ORDER BY captured_at DESC, id DESC LIMIT ?;\";\n    msg.payload = [limit];\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 800,
+        "wires": [
+            [
+                "mysql_select_logs"
+            ]
+        ]
+    },
+    {
+        "id": "mysql_select_logs",
+        "type": "mysql",
+        "z": "tab_screen_ocr_db",
+        "mydb": "mysql_cfg_screen_ocr",
+        "name": "DB: SELECT Recent Logs",
+        "x": 750,
+        "y": 800,
+        "wires": [
+            [
+                "fn_format_db_logs"
+            ]
+        ]
+    },
+    {
+        "id": "fn_format_db_logs",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Format DB Logs Result",
+        "func": "let rows = msg.payload || [];\nmsg.payload = {\n    status: \"SUCCESS\",\n    source: \"MYSQL_DATABASE_SELECT_QUERY\",\n    query: msg.query_meta,\n    returned_records: rows.length,\n    logs: rows,\n    timestamp: new Date().toISOString().slice(0, 19).replace('T', ' ')\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 800,
+        "wires": [
+            [
+                "http_response_get"
+            ]
+        ]
     },
     {
         "id": "mysql_cfg_screen_ocr",
