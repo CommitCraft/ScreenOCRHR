@@ -1,4 +1,5 @@
 S.No,Date,Time,Machine Name,Line,Detected Value,Previous Value,API Status
+9,2026-09-06,23:37:00,MC-04,Line-01,37,36,SENT
 8,2026-09-06,23:36:01,MC-04,Line-01,36,35,SENT
 7,2026-09-06,23:35:01,MC-04,Line-01,35,734,SENT
 6,2026-09-06,23:34:00,MC-04,Line-01,734,33,SENT
