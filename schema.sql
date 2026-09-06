@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS machine_ocr_logs (
     previous_value VARCHAR(50) DEFAULT NULL,
     captured_at DATETIME NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY uq_machine_captured (machine_name, captured_at),
     INDEX idx_machine (machine_name),
     INDEX idx_line (line_name),
     INDEX idx_captured_at (captured_at)

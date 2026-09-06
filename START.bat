@@ -23,6 +23,9 @@ if not exist "%~dp0roi.json" (
     "%PY_EXE%" "%~dp0live_ocr.py" --select
 )
 
+:: Clear any stop signal
+if exist "%~dp0stop.signal" del /f /q "%~dp0stop.signal" >nul 2>&1
+
 :: Stop any old OCR process to avoid duplicate running
 taskkill /F /IM pythonw.exe >nul 2>&1
 powershell -NoProfile -Command "Get-Process -Name pythonw -ErrorAction SilentlyContinue | Stop-Process -Force" >nul 2>&1

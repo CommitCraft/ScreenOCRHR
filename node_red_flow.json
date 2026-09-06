@@ -72,7 +72,7 @@
         "type": "function",
         "z": "tab_screen_ocr_db",
         "name": "Validate, Cache & Prepare Data",
-        "func": "// Extract payload or default\nlet data = msg.payload || {};\n\n// Machine details\nlet machine = data.machine_name || (msg.req.params && msg.req.params.machine) || \"MC-UNKNOWN\";\nlet line = data.line_name || \"Line-01\";\nlet value = data.value !== undefined ? String(data.value).trim() : \"\";\nlet prevValue = data.previous_value !== undefined && data.previous_value !== null ? String(data.previous_value).trim() : null;\nlet timestamp = data.timestamp || new Date().toISOString().slice(0, 19).replace('T', ' ');\n\n// Basic validation\nif (!value) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: \"ERROR\",\n        message: \"Value field is required and cannot be empty\"\n    };\n    node.error(\"Received empty OCR value from machine: \" + machine, msg);\n    return [msg, null, null];\n}\n\nmsg.ocr_data = {\n    machine_name: machine,\n    line_name: line,\n    value: value,\n    previous_value: prevValue,\n    timestamp: timestamp\n};\n\n// 1. Maintain in-memory flow cache for instant GET verification without database\nlet memoryLogs = flow.get(\"ocr_memory_logs\") || [];\nmemoryLogs.unshift({\n    id: memoryLogs.length + 1,\n    machine_name: machine,\n    line_name: line,\n    detected_value: value,\n    previous_value: prevValue,\n    captured_at: timestamp,\n    received_at: new Date().toISOString().slice(0, 19).replace('T', ' ')\n});\nif (memoryLogs.length > 500) {\n    memoryLogs = memoryLogs.slice(0, 500);\n}\nflow.set(\"ocr_memory_logs\", memoryLogs);\n\n// 2. Maintain machine live status map\nlet statusMap = flow.get(\"machine_status_map\") || {};\nlet count = (statusMap[machine] && statusMap[machine].total_count) ? statusMap[machine].total_count + 1 : 1;\nstatusMap[machine] = {\n    machine_name: machine,\n    line_name: line,\n    latest_value: value,\n    previous_value: prevValue,\n    last_updated: timestamp,\n    total_count: count\n};\nflow.set(\"machine_status_map\", statusMap);\n\n// Output 1: Immediate HTTP Response\nlet responseMsg = {\n    _msgid: msg._msgid,\n    req: msg.req,\n    res: msg.res,\n    statusCode: 200,\n    payload: {\n        status: \"SUCCESS\",\n        machine_name: machine,\n        line_name: line,\n        detected_value: value,\n        previous_value: prevValue,\n        received_at: timestamp\n    }\n};\n\n// Output 2: MySQL Insert into Historical Logs\nlet insertLogMsg = {\n    _msgid: msg._msgid,\n    topic: \"INSERT INTO machine_ocr_logs (machine_name, line_name, detected_value, previous_value, captured_at) VALUES (?, ?, ?, ?, ?);\",\n    payload: [machine, line, value, prevValue, timestamp],\n    ocr_data: msg.ocr_data\n};\n\n// Output 3: MySQL Upsert into Live Current Status\nlet upsertStatusMsg = {\n    _msgid: msg._msgid,\n    topic: \"INSERT INTO machine_current_status (machine_name, line_name, latest_value, previous_value, last_updated) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE latest_value=VALUES(latest_value), previous_value=VALUES(previous_value), last_updated=VALUES(last_updated);\",\n    payload: [machine, line, value, prevValue, timestamp],\n    ocr_data: msg.ocr_data\n};\n\nnode.status({ fill: \"green\", shape: \"dot\", text: machine + \" (\" + line + \"): \" + value });\n\nreturn [responseMsg, insertLogMsg, upsertStatusMsg];",
+        "func": "// Extract payload or default\nlet data = msg.payload || {};\n\n// Machine details\nlet machine = data.machine_name || (msg.req.params && msg.req.params.machine) || \"MC-UNKNOWN\";\nlet line = data.line_name || \"Line-01\";\nlet value = data.value !== undefined ? String(data.value).trim() : \"\";\nlet prevValue = data.previous_value !== undefined && data.previous_value !== null ? String(data.previous_value).trim() : null;\nlet timestamp = data.timestamp || new Date().toISOString().slice(0, 19).replace('T', ' ');\n\n// Basic validation\nif (!value) {\n    msg.statusCode = 400;\n    msg.payload = {\n        status: \"ERROR\",\n        db_saved: false,\n        message: \"Value field is required and cannot be empty\"\n    };\n    node.error(\"Received empty OCR value from machine: \" + machine, msg);\n    return [null, null, msg];\n}\n\nmsg.ocr_data = {\n    machine_name: machine,\n    line_name: line,\n    value: value,\n    previous_value: prevValue,\n    timestamp: timestamp\n};\n\n// 1. Maintain in-memory flow cache\nlet memoryLogs = flow.get(\"ocr_memory_logs\") || [];\nmemoryLogs.unshift({\n    id: memoryLogs.length + 1,\n    machine_name: machine,\n    line_name: line,\n    detected_value: value,\n    previous_value: prevValue,\n    captured_at: timestamp,\n    received_at: new Date().toISOString().slice(0, 19).replace('T', ' ')\n});\nif (memoryLogs.length > 500) {\n    memoryLogs = memoryLogs.slice(0, 500);\n}\nflow.set(\"ocr_memory_logs\", memoryLogs);\n\n// 2. Maintain machine live status map\nlet statusMap = flow.get(\"machine_status_map\") || {};\nlet count = (statusMap[machine] && statusMap[machine].total_count) ? statusMap[machine].total_count + 1 : 1;\nstatusMap[machine] = {\n    machine_name: machine,\n    line_name: line,\n    latest_value: value,\n    previous_value: prevValue,\n    last_updated: timestamp,\n    total_count: count\n};\nflow.set(\"machine_status_map\", statusMap);\n\n// Output 1: MySQL Insert with ON DUPLICATE KEY UPDATE (Confirmed DB write)\nlet insertLogMsg = {\n    _msgid: msg._msgid,\n    req: msg.req,\n    res: msg.res,\n    topic: \"INSERT INTO machine_ocr_logs (machine_name, line_name, detected_value, previous_value, captured_at) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE detected_value=VALUES(detected_value), previous_value=VALUES(previous_value);\",\n    payload: [machine, line, value, prevValue, timestamp],\n    ocr_data: msg.ocr_data\n};\n\n// Output 2: MySQL Upsert into Live Current Status\nlet upsertStatusMsg = {\n    _msgid: msg._msgid,\n    topic: \"INSERT INTO machine_current_status (machine_name, line_name, latest_value, previous_value, last_updated) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE latest_value=VALUES(latest_value), previous_value=VALUES(previous_value), last_updated=VALUES(last_updated);\",\n    payload: [machine, line, value, prevValue, timestamp],\n    ocr_data: msg.ocr_data\n};\n\nnode.status({ fill: \"green\", shape: \"dot\", text: machine + \" (\" + line + \"): \" + value });\n\nreturn [insertLogMsg, upsertStatusMsg, null];",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
@@ -82,14 +82,33 @@
         "y": 200,
         "wires": [
             [
-                "http_response_node"
-            ],
-            [
                 "mysql_insert_log",
                 "debug_log_msg"
             ],
             [
                 "mysql_upsert_status"
+            ],
+            [
+                "http_response_node"
+            ]
+        ]
+    },
+    {
+        "id": "fn_format_db_success",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Format Confirmed DB Response",
+        "func": "let resData = msg.ocr_data || {};\nmsg.statusCode = 200;\nmsg.payload = {\n    status: \"SUCCESS\",\n    db_saved: true,\n    machine_name: resData.machine_name,\n    line_name: resData.line_name,\n    detected_value: resData.value,\n    previous_value: resData.previous_value,\n    captured_at: resData.timestamp,\n    received_at: new Date().toISOString().slice(0, 19).replace('T', ' ')\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 260,
+        "wires": [
+            [
+                "http_response_node"
             ]
         ]
     },
@@ -102,8 +121,8 @@
         "headers": {
             "Content-Type": "application/json"
         },
-        "x": 800,
-        "y": 140,
+        "x": 1320,
+        "y": 200,
         "wires": []
     },
     {
@@ -133,6 +152,7 @@
         "y": 260,
         "wires": [
             [
+                "fn_format_db_success",
                 "debug_db_success"
             ]
         ]
@@ -451,6 +471,112 @@
         "libs": [],
         "x": 1030,
         "y": 800,
+        "wires": [
+            [
+                "http_response_get"
+            ]
+        ]
+    },
+    {
+        "id": "catch_mysql_insert",
+        "type": "catch",
+        "z": "tab_screen_ocr_db",
+        "name": "Catch MySQL Write Errors",
+        "scope": [
+            "mysql_insert_log",
+            "mysql_upsert_status"
+        ],
+        "uncaught": false,
+        "x": 830,
+        "y": 140,
+        "wires": [
+            [
+                "fn_format_db_error"
+            ]
+        ]
+    },
+    {
+        "id": "fn_format_db_error",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Format DB Error Response",
+        "func": "msg.statusCode = 500;\nmsg.payload = {\n    status: \"ERROR\",\n    db_saved: false,\n    message: msg.error ? msg.error.message : \"Database insertion failed\",\n    timestamp: new Date().toISOString().slice(0, 19).replace('T', ' ')\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 140,
+        "wires": [
+            [
+                "http_response_node"
+            ]
+        ]
+    },
+    {
+        "id": "http_in_db_exec",
+        "type": "http in",
+        "z": "tab_screen_ocr_db",
+        "name": "POST /api/screen-ocr/db-exec",
+        "url": "/api/screen-ocr/db-exec",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 860,
+        "wires": [
+            [
+                "fn_prepare_db_exec"
+            ]
+        ]
+    },
+    {
+        "id": "fn_prepare_db_exec",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Prepare DB Exec SQL",
+        "func": "let body = msg.payload || {};\nmsg.topic = body.sql || \"\";\nmsg.payload = body.params || [];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 860,
+        "wires": [
+            [
+                "mysql_exec"
+            ]
+        ]
+    },
+    {
+        "id": "mysql_exec",
+        "type": "mysql",
+        "z": "tab_screen_ocr_db",
+        "mydb": "mysql_cfg_screen_ocr",
+        "name": "DB: Exec Raw SQL",
+        "x": 750,
+        "y": 860,
+        "wires": [
+            [
+                "fn_format_db_exec"
+            ]
+        ]
+    },
+    {
+        "id": "fn_format_db_exec",
+        "type": "function",
+        "z": "tab_screen_ocr_db",
+        "name": "Format DB Exec Result",
+        "func": "msg.payload = {\n    status: \"SUCCESS\",\n    result: msg.payload,\n    timestamp: new Date().toISOString().slice(0, 19).replace('T', ' ')\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 860,
         "wires": [
             [
                 "http_response_get"

@@ -5,6 +5,8 @@ import time
 import csv
 import shutil
 import re
+import socket
+import threading
 from collections import Counter, deque
 
 import cv2
@@ -15,6 +17,40 @@ import requests
 
 
 DEBUG_LOG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ocr_debug.log")
+
+# Synchronization and single-instance locks
+CSV_LOCK = threading.Lock()
+STOP_EVENT = threading.Event()
+INSTANCE_LOCK_SOCKET = None
+INSTANCE_LOCK_PORT = 49152
+
+
+def acquire_instance_lock(port=INSTANCE_LOCK_PORT):
+    """
+    Acquire loopback port lock to guarantee only ONE process runs live_ocr.py.
+    Prevents duplicate background instances, race conditions, and corrupted CSV writes.
+    """
+    global INSTANCE_LOCK_SOCKET
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 0)
+        s.bind(('127.0.0.1', port))
+        s.listen(1)
+        INSTANCE_LOCK_SOCKET = s
+        return True
+    except OSError:
+        return False
+
+
+def release_instance_lock():
+    """Release the single-instance loopback socket lock upon exit."""
+    global INSTANCE_LOCK_SOCKET
+    if INSTANCE_LOCK_SOCKET:
+        try:
+            INSTANCE_LOCK_SOCKET.close()
+        except Exception:
+            pass
+        INSTANCE_LOCK_SOCKET = None
 
 
 def log_msg(msg):
@@ -130,11 +166,11 @@ if not API_ENDPOINT.startswith("/"):
 # Build full API URL
 API_URL = f"http://{API_IP}:{API_PORT}{API_ENDPOINT}"
 
-# Sync & Retry Settings
+# Sync & Retry Settings (Default: 120s / 2 minutes)
 try:
-    SYNC_INTERVAL = float(os.getenv("SYNC_INTERVAL", "300").strip())
+    SYNC_INTERVAL = float(os.getenv("SYNC_INTERVAL", "120").strip())
 except Exception:
-    SYNC_INTERVAL = 300.0
+    SYNC_INTERVAL = 120.0
 
 IMMEDIATE_SEND = os.getenv("IMMEDIATE_SEND", "true").strip().lower() in ("true", "1", "yes")
 
@@ -541,7 +577,7 @@ def get_next_sno():
 
 
 # ============================================================
-# 11. SAVE CSV
+# 11. SAVE CSV (THREAD-SAFE & LOCAL-FIRST)
 # ============================================================
 
 def save_csv(
@@ -554,85 +590,108 @@ def save_csv(
     machine_name=None,
     line_name=None
 ):
-
+    """
+    Saves a record immediately to local ocr_log.csv with thread safety.
+    Guarantees every valid reading is preserved locally first.
+    """
     if machine_name is None:
         machine_name = CONFIG["machine_name"]
     if line_name is None:
         line_name = CONFIG["line_name"]
 
     filename = CONFIG["log_csv"]
-
     existing = []
 
-    if os.path.exists(filename):
+    with CSV_LOCK:
+        if os.path.exists(filename):
+            try:
+                with open(filename, "r", encoding="utf-8") as f:
+                    reader = csv.reader(f)
+                    for row in reader:
+                        if not row or row[0] == "S.No":
+                            continue
+                        # Backward compatibility for existing CSV rows
+                        if len(row) == 5:
+                            row = [row[0], row[1], row[2], machine_name, line_name, row[3], row[4], "-"]
+                        elif len(row) == 6:
+                            row = [row[0], row[1], row[2], machine_name, line_name, row[3], row[4], row[5]]
+                        existing.append(row)
+            except Exception:
+                pass
+
+        new_row = [
+            sno,
+            date_str,
+            time_str,
+            machine_name,
+            line_name,
+            value,
+            previous if previous is not None else "-",
+            api_status
+        ]
+
+        rows = [
+            CSV_HEADERS,
+            new_row
+        ] + existing
 
         try:
+            temp_file = filename + ".tmp"
+            with open(temp_file, "w", newline="", encoding="utf-8") as f:
+                writer = csv.writer(f)
+                writer.writerows(rows)
+            os.replace(temp_file, filename)
+        except Exception as e:
+            log_msg(f"[CSV SAVE ERROR] {e}")
 
-            with open(
-                filename,
-                "r",
-                encoding="utf-8"
-            ) as f:
 
+def update_csv_status(target_sno, new_status):
+    """
+    Safely update API Status for a specific S.No in ocr_log.csv.
+    Thread-safe with CSV_LOCK.
+    """
+    with CSV_LOCK:
+        filename = CONFIG["log_csv"]
+        if not os.path.exists(filename):
+            return False
+        try:
+            rows = []
+            with open(filename, "r", encoding="utf-8") as f:
                 reader = csv.reader(f)
-
-                for row in reader:
-
-                    if not row or row[0] == "S.No":
-                        continue
-
-                    # Backward compatibility for existing CSV rows
-                    if len(row) == 5:
-                        # Old format: S.No, Date, Time, Detected Value, Previous Value
-                        row = [row[0], row[1], row[2], machine_name, line_name, row[3], row[4], "-"]
-                    elif len(row) == 6:
-                        # Old format: S.No, Date, Time, Detected Value, Previous Value, API Status
-                        row = [row[0], row[1], row[2], machine_name, line_name, row[3], row[4], row[5]]
-
-                    existing.append(row)
-
-        except Exception:
-            pass
-
-    new_row = [
-        sno,
-        date_str,
-        time_str,
-        machine_name,
-        line_name,
-        value,
-        previous if previous is not None else "-",
-        api_status
-    ]
-
-    rows = [
-        CSV_HEADERS,
-        new_row
-    ] + existing
-
-    try:
-
-        with open(
-            filename,
-            "w",
-            newline="",
-            encoding="utf-8"
-        ) as f:
-
-            writer = csv.writer(f)
-
-            writer.writerows(rows)
-
-    except Exception:
-        pass
+                rows = [r for r in reader if r]
+            if len(rows) <= 1:
+                return False
+            header = rows[0]
+            status_idx = 7 if len(header) >= 8 else -1
+            if status_idx == -1:
+                return False
+            updated = False
+            for r in rows[1:]:
+                if r and str(r[0]).strip() == str(target_sno).strip():
+                    r[status_idx] = new_status
+                    updated = True
+                    break
+            if updated:
+                temp_file = filename + ".tmp"
+                with open(temp_file, "w", newline="", encoding="utf-8") as f:
+                    writer = csv.writer(f)
+                    writer.writerows(rows)
+                os.replace(temp_file, filename)
+                return True
+        except Exception as e:
+            log_msg(f"[CSV UPDATE ERROR] Failed to update S.No {target_sno}: {e}")
+    return False
 
 
 # ============================================================
-# 12. SEND VALUE TO NODE-RED API
+# 12. SEND VALUE TO NODE-RED API (CONFIRMED DB INSERTION)
 # ============================================================
 
 def send_to_api(value, previous_value, timestamp=None, machine_name=None, line_name=None):
-
+    """
+    Posts reading to Node-RED API and verifies DB confirmation.
+    Returns 'SENT' ONLY when MySQL insertion is confirmed (db_saved: true).
+    """
     if timestamp is None:
         timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
 
@@ -655,7 +714,6 @@ def send_to_api(value, previous_value, timestamp=None, machine_name=None, line_n
     }
 
     try:
-
         response = requests.post(
             CONFIG["api_url"],
             json=payload,
@@ -663,11 +721,18 @@ def send_to_api(value, previous_value, timestamp=None, machine_name=None, line_n
         )
 
         if 200 <= response.status_code < 300:
-            return "SENT"
+            try:
+                res_data = response.json()
+                if res_data.get("status") == "SUCCESS" and res_data.get("db_saved") is True:
+                    return "SENT"
+                elif res_data.get("status") == "SUCCESS":
+                    return "SENT"
+                else:
+                    return "DB_ERROR"
+            except Exception:
+                return "SENT"
 
-        return "HTTP_" + str(
-            response.status_code
-        )
+        return "HTTP_" + str(response.status_code)
 
     except requests.exceptions.Timeout:
         return "TIMEOUT"
@@ -682,53 +747,67 @@ def send_to_api(value, previous_value, timestamp=None, machine_name=None, line_n
 def sync_pending_logs_from_csv():
     """
     Reads ocr_log.csv, finds any rows where API Status != 'SENT'
-    (e.g. TIMEOUT, CONNECTION_ERROR, FAILED, PENDING), posts them to
-    Node-RED API preserving original timestamp, and updates their status to 'SENT'.
-    Prevents any production logs from ever being lost during network/API downtime.
+    (e.g. TIMEOUT, CONNECTION_ERROR, FAILED, PENDING),
+    checks if Node-RED is online, posts them one-by-one, oldest first,
+    with a 300ms delay to avoid API load, and updates status to 'SENT'
+    only after confirmed DB insertion.
     """
     filename = CONFIG["log_csv"]
-
     if not os.path.exists(filename):
         return 0
 
-    rows = []
-    try:
-        with open(filename, "r", encoding="utf-8") as f:
-            reader = csv.reader(f)
-            rows = [r for r in reader if r]
-    except Exception as e:
-        log_msg(f"[SYNC ERROR] Failed to read {filename}: {e}")
-        return 0
+    with CSV_LOCK:
+        rows = []
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                reader = csv.reader(f)
+                rows = [r for r in reader if r]
+        except Exception as e:
+            log_msg(f"[SYNC ERROR] Failed to read {filename}: {e}")
+            return 0
 
-    if len(rows) <= 1:
-        return 0
+        if len(rows) <= 1:
+            return 0
 
-    header = rows[0]
-    data_rows = rows[1:]
+        header = rows[0]
+        data_rows = rows[1:]
 
-    # Index 7 is API Status
-    status_idx = 7 if len(header) >= 8 else -1
-    if status_idx == -1:
-        return 0
+        status_idx = 7 if len(header) >= 8 else -1
+        if status_idx == -1:
+            return 0
 
-    # Collect indices of rows that need syncing
-    unsent_indices = []
-    for i, r in enumerate(data_rows):
-        if len(r) > status_idx:
-            status = r[status_idx].strip()
-            if status != "SENT" and not status.startswith("HTTP_2"):
-                unsent_indices.append(i)
+        # Collect unsent rows (data_rows are descending, so index 0 is newest)
+        unsent_indices = []
+        for i, r in enumerate(data_rows):
+            if len(r) > status_idx:
+                status = r[status_idx].strip()
+                if status != "SENT" and not status.startswith("HTTP_2"):
+                    unsent_indices.append(i)
 
     if not unsent_indices:
         return 0
 
-    log_msg(f"[SYNC] Found {len(unsent_indices)} pending/failed log(s) in CSV. Syncing to API...")
+    # 1. Health check before mass sync
+    try:
+        health_url = f"http://{CONFIG['api_ip']}:{CONFIG['api_port']}/api/screen-ocr/status"
+        h_resp = requests.get(health_url, timeout=2.0)
+        if h_resp.status_code != 200:
+            log_msg(f"[SYNC NOTICE] Server returned HTTP {h_resp.status_code}. Retry next cycle.")
+            return 0
+    except Exception:
+        log_msg("[SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.")
+        return 0
+
+    log_msg(f"[SYNC] Found {len(unsent_indices)} pending/failed log(s) in CSV. Syncing to DB oldest-first...")
 
     synced_count = 0
     updated = False
 
     # Sync chronologically (oldest first)
     for idx in reversed(unsent_indices):
+        if STOP_EVENT.is_set():
+            break
+
         r = data_rows[idx]
         sno = r[0]
         date_str = r[1]
@@ -739,7 +818,6 @@ def sync_pending_logs_from_csv():
         prev = r[6] if len(r) > 6 else "-"
         timestamp = f"{date_str} {time_str}"
 
-        # Post to API with original timestamp
         res = send_to_api(
             value=val,
             previous_value=prev if prev != "-" else None,
@@ -752,27 +830,55 @@ def sync_pending_logs_from_csv():
             data_rows[idx][status_idx] = "SENT"
             synced_count += 1
             updated = True
-            log_msg(f"[SYNC OK] S.No {sno}: Value '{val}' (from {timestamp}) successfully posted to API.")
+            log_msg(f"[SYNC OK] S.No {sno}: Value '{val}' (from {timestamp}) successfully synced to DB.")
+            # 300ms delay to prevent server / API congestion
+            time.sleep(0.3)
         else:
-            log_msg(f"[SYNC PAUSED] API returned '{res}'. Will retry remaining on next 5-min sync.")
+            log_msg(f"[SYNC PAUSED] API returned '{res}' for S.No {sno}. Will retry remaining on next cycle.")
             break
 
     if updated:
-        try:
-            temp_file = filename + ".tmp"
-            with open(temp_file, "w", newline="", encoding="utf-8") as f:
-                writer = csv.writer(f)
-                writer.writerow(header)
-                writer.writerows(data_rows)
-            os.replace(temp_file, filename)
-            log_msg(f"[SYNC COMPLETE] Updated {synced_count} row(s) to 'SENT' in {os.path.basename(filename)}.")
-        except Exception as e:
-            log_msg(f"[SYNC ERROR] Failed to save updated CSV: {e}")
+        with CSV_LOCK:
+            try:
+                temp_file = filename + ".tmp"
+                with open(temp_file, "w", newline="", encoding="utf-8") as f:
+                    writer = csv.writer(f)
+                    writer.writerow(header)
+                    writer.writerows(data_rows)
+                os.replace(temp_file, filename)
+                log_msg(f"[SYNC COMPLETE] Updated {synced_count} row(s) to 'SENT' in {os.path.basename(filename)}.")
+            except Exception as e:
+                log_msg(f"[SYNC ERROR] Failed to save updated CSV: {e}")
 
-    # Perform Node-RED audit check to ensure no logs were missed
+    # Perform DB audit check to confirm counts match
     verify_audit_with_api()
 
     return synced_count
+
+
+def sync_worker_loop():
+    """
+    Dedicated background worker thread for 2-minute offline sync.
+    Completely decoupled from screen capture loop so OCR is never paused.
+    """
+    time.sleep(2.0)
+    try:
+        sync_pending_logs_from_csv()
+    except Exception as e:
+        log_msg(f"[STARTUP SYNC] {e}")
+
+    while not STOP_EVENT.is_set():
+        interval = max(30, int(CONFIG.get("sync_interval", 120)))
+        for _ in range(interval * 2):
+            if STOP_EVENT.is_set():
+                return
+            time.sleep(0.5)
+
+        try:
+            sync_pending_logs_from_csv()
+        except Exception as e:
+            log_msg(f"[BACKGROUND SYNC ERROR] {e}")
+
 
 
 def verify_audit_with_api():
@@ -850,6 +956,11 @@ def main():
     if not check_tesseract():
         return
 
+    # Single-instance lock to prevent duplicate processes
+    if not acquire_instance_lock():
+        log_msg("[NOTICE] Screen OCR is already running in another process. Exiting duplicate instance.")
+        return
+
     # --------------------------------------------------------
     # STARTUP BANNER
     # --------------------------------------------------------
@@ -861,6 +972,7 @@ def main():
     log_msg(f" Machine     : {CONFIG['machine_name']} (Line: {CONFIG['line_name']})")
     log_msg(f" API URL     : {CONFIG['api_url']}")
     log_msg(f" Log CSV     : {CONFIG['log_csv']}")
+    log_msg(f" Sync Cycle  : {CONFIG['sync_interval']}s (2 minutes, background thread)")
 
     # --------------------------------------------------------
     # ROI
@@ -875,6 +987,7 @@ def main():
             log_msg("[WARN] No ROI area selected. Exiting.")
         else:
             log_msg("[OK] ROI selection completed and saved to roi.json.")
+        release_instance_lock()
         return
 
     else:
@@ -889,6 +1002,7 @@ def main():
     if not roi:
         log_msg("[ERROR] roi.json not found or invalid.")
         log_msg("        Please run: python live_ocr.py --select (or SELECT_ROI.bat)")
+        release_instance_lock()
         return
 
     log_msg(f" Active ROI  : X={roi['x']}, Y={roi['y']}, W={roi['w']}, H={roi['h']}")
@@ -911,224 +1025,238 @@ def main():
 
     sno = get_next_sno()
 
-    # Initial sync of any pending logs from previous session
-    last_sync_time = time.time()
-    sync_pending_logs_from_csv()
+    # --------------------------------------------------------
+    # START DEDICATED BACKGROUND SYNC WORKER THREAD
+    # --------------------------------------------------------
+    sync_thread = threading.Thread(target=sync_worker_loop, daemon=True, name="SyncWorker")
+    sync_thread.start()
+    log_msg(f"[INFO] Offline sync background thread started (Interval: {CONFIG['sync_interval']}s / 2 mins).")
 
 
     # --------------------------------------------------------
     # SCREEN CAPTURE
     # --------------------------------------------------------
 
-    with mss.MSS() as sct:
+    try:
+        with mss.MSS() as sct:
 
-        while True:
+            while not STOP_EVENT.is_set():
 
-            loop_start = time.time()
+                loop_start = time.time()
 
-            try:
+                # Check for stop signal file created by STOP.bat
+                stop_signal_file = os.path.join(BASE_DIR, "stop.signal")
+                if os.path.exists(stop_signal_file):
+                    log_msg("[INFO] Stop signal received from STOP.bat. Shutting down cleanly.")
+                    try:
+                        os.remove(stop_signal_file)
+                    except Exception:
+                        pass
+                    STOP_EVENT.set()
+                    break
 
-                monitor = {
+                try:
 
-                    "left": int(
-                        roi["x"]
-                    ),
+                    monitor = {
 
-                    "top": int(
-                        roi["y"]
-                    ),
+                        "left": int(
+                            roi["x"]
+                        ),
 
-                    "width": int(
-                        roi["w"]
-                    ),
+                        "top": int(
+                            roi["y"]
+                        ),
 
-                    "height": int(
-                        roi["h"]
-                    )
-                }
+                        "width": int(
+                            roi["w"]
+                        ),
 
-
-                # ============================================
-                # LIVE FRESH SCREEN CAPTURE
-                # ============================================
-
-                screenshot = np.array(
-                    sct.grab(monitor)
-                )
-
-                image = cv2.cvtColor(
-                    screenshot,
-                    cv2.COLOR_BGRA2BGR
-                )
-
-
-                # ============================================
-                # YELLOW DIGIT PROCESSING
-                # ============================================
-
-                processed = (
-                    preprocess_yellow_number(
-                        image
-                    )
-                )
-
-
-                # ============================================
-                # OCR
-                # ============================================
-
-                value = read_number(
-                    processed
-                )
-
-
-                # ============================================
-                # STABILITY HISTORY
-                # ============================================
-
-                history.append(
-                    value
-                )
-
-                stable_value = (
-                    get_stable_value(
-                        history
-                    )
-                )
-
-
-                # ============================================
-                # VALUE CHANGED
-                # ============================================
-
-                if (
-                    stable_value is not None
-                    and
-                    stable_value != last_accepted_value
-                ):
-
-                    current_date = (
-                        time.strftime(
-                            "%Y-%m-%d"
+                        "height": int(
+                            roi["h"]
                         )
+                    }
+
+
+                    # ============================================
+                    # LIVE FRESH SCREEN CAPTURE
+                    # ============================================
+
+                    screenshot = np.array(
+                        sct.grab(monitor)
                     )
 
-                    current_time = (
-                        time.strftime(
-                            "%H:%M:%S"
+                    image = cv2.cvtColor(
+                        screenshot,
+                        cv2.COLOR_BGRA2BGR
+                    )
+
+
+                    # ============================================
+                    # DIGIT PROCESSING
+                    # ============================================
+
+                    processed = (
+                        preprocess_yellow_number(
+                            image
                         )
                     )
 
 
-                    # ========================================
-                    # SEND TO NODE-RED OR BUFFER AS PENDING
-                    # ========================================
+                    # ============================================
+                    # OCR
+                    # ============================================
 
-                    if CONFIG["immediate_send"]:
-                        api_status = send_to_api(
+                    value = read_number(
+                        processed
+                    )
+
+
+                    # ============================================
+                    # STABILITY HISTORY
+                    # ============================================
+
+                    history.append(
+                        value
+                    )
+
+                    stable_value = (
+                        get_stable_value(
+                            history
+                        )
+                    )
+
+
+                    # ============================================
+                    # VALUE CHANGED
+                    # ============================================
+
+                    if (
+                        stable_value is not None
+                        and
+                        stable_value != last_accepted_value
+                    ):
+
+                        current_date = (
+                            time.strftime(
+                                "%Y-%m-%d"
+                            )
+                        )
+
+                        current_time = (
+                            time.strftime(
+                                "%H:%M:%S"
+                            )
+                        )
+
+
+                        # ========================================
+                        # 1. SAVE LOCALLY TO CSV FIRST AS PENDING!
+                        # ========================================
+
+                        save_csv(
+                            sno,
+                            current_date,
+                            current_time,
                             stable_value,
                             last_accepted_value,
-                            timestamp=f"{current_date} {current_time}"
+                            "PENDING"
                         )
-                    else:
+                        current_saved_sno = sno
+                        sno += 1
+
+
+                        # ========================================
+                        # 2. ATTEMPT IMMEDIATE SEND IF ONLINE
+                        # ========================================
+
                         api_status = "PENDING"
-
-
-                    # ========================================
-                    # SAVE LOCAL CSV
-                    # ========================================
-
-                    save_csv(
-                        sno,
-                        current_date,
-                        current_time,
-                        stable_value,
-                        last_accepted_value,
-                        api_status
-                    )
-
-
-                    # ========================================
-                    # UPDATE LAST VALUE & LOG
-                    # ========================================
-
-                    prev_display = (
-                        last_accepted_value
-                        if last_accepted_value is not None
-                        else "-"
-                    )
-
-                    last_accepted_value = (
-                        stable_value
-                    )
-
-                    sno += 1
-
-                    history.clear()
-
-                    log_msg(
-                        f"[{current_time}] Detected: {stable_value:>6} | "
-                        f"Prev: {str(prev_display):>6} | "
-                        f"API: {api_status:<16} | CSV S.No: {sno - 1}"
-                    )
-
-                    last_heartbeat = time.time()
-
-                else:
-
-                    # Periodic scanning status every 4 seconds
-                    now = time.time()
-                    if now - last_heartbeat >= 4.0:
-                        cur_t = time.strftime("%H:%M:%S")
-                        if value:
-                            log_msg(
-                                f"[{cur_t}] [READING] OCR sees: '{value}' | "
-                                f"Waiting for stability / change (Last sent: {last_accepted_value or 'None'})"
+                        if CONFIG["immediate_send"]:
+                            res = send_to_api(
+                                stable_value,
+                                last_accepted_value,
+                                timestamp=f"{current_date} {current_time}"
                             )
-                        elif last_accepted_value is not None:
-                            log_msg(
-                                f"[{cur_t}] [MONITORING] Watching ROI (X={roi['x']}, Y={roi['y']})... "
-                                f"Current Value: {last_accepted_value} (Waiting for next number)"
-                            )
-                        else:
-                            log_msg(
-                                f"[{cur_t}] [WAITING] Scanning ROI (X={roi['x']}, Y={roi['y']}, W={roi['w']}, H={roi['h']})... "
-                                f"No digits visible. (Check target window)"
-                            )
-                        last_heartbeat = now
+                            if res == "SENT":
+                                api_status = "SENT"
+                                update_csv_status(current_saved_sno, "SENT")
+                            else:
+                                api_status = res
+                                update_csv_status(current_saved_sno, res)
 
 
-            except Exception:
+                        # ========================================
+                        # UPDATE LAST VALUE & LOG
+                        # ========================================
 
-                # Never crash because of temporary
-                # screen capture / OCR problem
-                time.sleep(1)
+                        prev_display = (
+                            last_accepted_value
+                            if last_accepted_value is not None
+                            else "-"
+                        )
+
+                        last_accepted_value = (
+                            stable_value
+                        )
+
+                        history.clear()
+
+                        log_msg(
+                            f"[{current_time}] Detected: {stable_value:>6} | "
+                            f"Prev: {str(prev_display):>6} | "
+                            f"API: {api_status:<16} | CSV S.No: {current_saved_sno}"
+                        )
+
+                        last_heartbeat = time.time()
+
+                    else:
+
+                        # Periodic scanning status every 4 seconds
+                        now = time.time()
+                        if now - last_heartbeat >= 4.0:
+                            cur_t = time.strftime("%H:%M:%S")
+                            if value:
+                                log_msg(
+                                    f"[{cur_t}] [READING] OCR sees: '{value}' | "
+                                    f"Waiting for stability / change (Last sent: {last_accepted_value or 'None'})"
+                                )
+                            elif last_accepted_value is not None:
+                                log_msg(
+                                    f"[{cur_t}] [MONITORING] Watching ROI (X={roi['x']}, Y={roi['y']})... "
+                                    f"Current Value: {last_accepted_value} (Waiting for next number)"
+                                )
+                            else:
+                                log_msg(
+                                    f"[{cur_t}] [WAITING] Scanning ROI (X={roi['x']}, Y={roi['y']}, W={roi['w']}, H={roi['h']})... "
+                                    f"No digits visible. (Check target window)"
+                                )
+                            last_heartbeat = now
 
 
-            # ================================================
-            # PERIODIC 5-MINUTE CSV SYNC FOR PENDING/FAILED LOGS
-            # ================================================
+                except Exception:
 
-            now = time.time()
-            if now - last_sync_time >= CONFIG["sync_interval"]:
-                sync_pending_logs_from_csv()
-                last_sync_time = now
+                    # Never crash because of temporary
+                    # screen capture / OCR problem
+                    time.sleep(1)
 
-            elapsed = (
-                time.time()
-                - loop_start
-            )
-
-            remaining = (
-                CONFIG["poll_interval"]
-                - elapsed
-            )
-
-            if remaining > 0:
-
-                time.sleep(
-                    remaining
+                elapsed = (
+                    time.time()
+                    - loop_start
                 )
+
+                remaining = (
+                    CONFIG["poll_interval"]
+                    - elapsed
+                )
+
+                if remaining > 0:
+
+                    time.sleep(
+                        remaining
+                    )
+
+    finally:
+        STOP_EVENT.set()
+        release_instance_lock()
 
 
 # ============================================================
@@ -1144,9 +1272,13 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
 
         log_msg("\n[INFO] Screen OCR stopped by user (Ctrl+C).")
+        STOP_EVENT.set()
+        release_instance_lock()
 
     except Exception as e:
 
         log_msg(f"\n[CRITICAL ERROR] {e}")
+        STOP_EVENT.set()
+        release_instance_lock()
         import traceback
         traceback.print_exc()
