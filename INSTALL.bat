@@ -123,8 +123,13 @@ if /i not "%SOURCE_DIR%"=="%INSTALL_DIR%\" if /i not "%SOURCE_DIR%"=="%INSTALL_D
     )
 )
 
+REM Always start each installed PC with a fresh local OCR log.
+REM Keep only the CSV header so the first reading gets S.No 1.
+if exist "%INSTALL_DIR%ocr_log.csv" del /F /Q "%INSTALL_DIR%ocr_log.csv"
+> "%INSTALL_DIR%ocr_log.csv" echo S.No,Date,Time,Machine Name,Line,Detected Value,Previous Value,API Status
+
 echo.
-echo Files copied successfully (.env, live_ocr.py, roi.json).
+echo Files copied successfully (.env, live_ocr.py, roi.json, fresh ocr_log.csv).
 echo.
 
 

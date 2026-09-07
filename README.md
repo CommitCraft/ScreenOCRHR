@@ -27,7 +27,7 @@ Multi-Machine Real-time Screen OCR Data Logger for Node-RED and Database.
 
 ## 📋 Data Files
 
-* **`ocr_log.csv`** : Sabhi detected values ka real-time log (Date, Time, Machine, Value, Previous Value, API Status).
+* **`ocr_log.csv`** : Current PC ke detected values ka real-time log (Date, Time, Machine, Value, Previous Value, API Status). Installer aur `START.bat` is file ko header-only fresh state me banate hain, isliye har nayi machine/session ki pehli entry `S.No 1` se start hoti hai.
 * **`ocr_debug.log`** : Background activity aur system diagnostics log.
 * **`roi.json`** : Saved screen coordinates (X, Y, Width, Height).
 * **`.env`** : Machine Name, Line Name, API Server aur Sync settings.

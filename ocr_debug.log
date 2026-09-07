@@ -1339,3 +1339,1346 @@
 [2026-09-07 00:58:15] [00:58:15] Detected:     58 | Prev:      - | API: SENT             | CSV S.No: 83
 [2026-09-07 00:58:19] [00:58:19] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
 [2026-09-07 00:58:23] [00:58:23] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 00:58:27] [00:58:27] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 00:58:31] [00:58:31] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 00:58:35] [00:58:35] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 00:58:40] [00:58:40] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 00:58:44] [00:58:44] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 00:58:48] [00:58:48] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 00:58:52] [00:58:52] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 00:58:56] [00:58:56] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 00:59:00] [00:59:00] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 00:59:01] [00:59:01] Detected:     59 | Prev:     58 | API: SENT             | CSV S.No: 84
+[2026-09-07 00:59:05] [00:59:05] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:09] [00:59:09] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:13] [00:59:13] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:17] [00:59:17] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:21] [00:59:21] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:25] [00:59:25] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:29] [00:59:29] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:34] [00:59:34] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:38] [00:59:38] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:42] [00:59:42] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:46] [00:59:46] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:50] [00:59:50] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:54] [00:59:54] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 00:59:58] [00:59:58] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 01:00:01] [01:00:01] Detected:     00 | Prev:     59 | API: SENT             | CSV S.No: 85
+[2026-09-07 01:00:05] [01:00:05] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:09] [01:00:09] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:14] [01:00:14] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:18] [01:00:18] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:22] [01:00:22] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:26] [01:00:26] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:30] [01:00:30] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:34] [01:00:34] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:38] [01:00:38] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:42] [01:00:42] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:47] [01:00:47] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:51] [01:00:51] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:55] [01:00:55] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:00:59] [01:00:59] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 01:01:01] [01:01:01] Detected:     01 | Prev:     00 | API: SENT             | CSV S.No: 86
+[2026-09-07 01:01:05] [01:01:05] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:09] [01:01:09] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:13] [01:01:13] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:17] [01:01:17] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:21] [01:01:21] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:26] [01:01:26] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:30] [01:01:30] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:34] [01:01:34] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:38] [01:01:38] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:42] [01:01:42] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:46] [01:01:46] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:50] [01:01:50] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:54] [01:01:54] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:01:58] [01:01:58] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 01:02:01] [01:02:01] Detected:     02 | Prev:     01 | API: SENT             | CSV S.No: 87
+[2026-09-07 01:02:05] [01:02:05] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:09] [01:02:09] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:13] [01:02:13] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:17] [01:02:17] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:21] [01:02:21] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:25] [01:02:25] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:29] [01:02:29] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:34] [01:02:34] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:38] [01:02:38] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:42] [01:02:42] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:46] [01:02:46] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:50] [01:02:50] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:54] [01:02:54] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:02:58] [01:02:58] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 01:03:01] [01:03:01] Detected:    034 | Prev:     02 | API: SENT             | CSV S.No: 88
+[2026-09-07 01:03:05] [01:03:05] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:09] [01:03:09] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:14] [01:03:14] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:18] [01:03:18] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:22] [01:03:22] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:26] [01:03:26] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:30] [01:03:30] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:34] [01:03:34] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:38] [01:03:38] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:42] [01:03:42] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:46] [01:03:46] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:51] [01:03:51] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:55] [01:03:55] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:03:59] [01:03:59] [READING] OCR sees: '034' | Waiting for stability / change (Last sent: 034)
+[2026-09-07 01:04:01] [01:04:01] Detected:     04 | Prev:    034 | API: SENT             | CSV S.No: 89
+[2026-09-07 01:04:05] [01:04:05] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:09] [01:04:09] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:13] [01:04:13] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:17] [01:04:17] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:21] [01:04:21] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:25] [01:04:25] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:29] [01:04:29] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:33] [NOTICE] Screen OCR is already running in another process. Exiting duplicate instance.
+[2026-09-07 01:04:33] [01:04:33] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:38] [01:04:38] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:42] [01:04:42] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:46] [01:04:46] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:50] [01:04:50] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:04:54] [01:04:54] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 01:06:30] ============================================================
+[2026-09-07 01:06:30]             APLOS SCREEN OCR - LIVE MONITOR
+[2026-09-07 01:06:30] ============================================================
+[2026-09-07 01:06:30]  Location    : c:\ScreenOCR
+[2026-09-07 01:06:30]  Machine     : MC-04 (Line: Line-01)
+[2026-09-07 01:06:30]  API URL     : http://127.0.0.1:1880/api/screen-ocr
+[2026-09-07 01:06:30]  Log CSV     : c:\ScreenOCR\ocr_log.csv
+[2026-09-07 01:06:30]  Sync Cycle  : 120.0s (2 minutes, background thread)
+[2026-09-07 01:06:30]  Active ROI  : X=1851, Y=1027, W=26, H=24
+[2026-09-07 01:06:30]  Tesseract   : C:\Program Files\Tesseract-OCR\tesseract.exe
+[2026-09-07 01:06:30] ============================================================
+[2026-09-07 01:06:30] [INFO] Live monitoring started. Press Ctrl+C in this window to stop.
+[2026-09-07 01:06:30] ------------------------------------------------------------
+[2026-09-07 01:06:30] [INFO] Offline sync background thread started (Interval: 120.0s / 2 mins).
+[2026-09-07 01:06:31] [01:06:31] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: None)
+[2026-09-07 01:06:31] [01:06:31] Detected:     06 | Prev:      - | API: SENT             | CSV S.No: 90
+[2026-09-07 01:06:35] [01:06:35] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 01:06:39] [01:06:39] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 01:06:43] [01:06:43] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 01:06:48] [01:06:48] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 01:06:52] [01:06:52] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 01:06:56] [01:06:56] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 01:07:00] [01:07:00] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 01:07:01] [01:07:01] Detected:     07 | Prev:     06 | API: SENT             | CSV S.No: 91
+[2026-09-07 01:07:05] [01:07:05] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 01:07:09] [01:07:09] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 01:07:13] [01:07:13] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 01:07:17] [01:07:17] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 01:07:21] [01:07:21] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 01:07:25] [01:07:25] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 11:16:57] ============================================================
+[2026-09-07 11:16:57]             APLOS SCREEN OCR - LIVE MONITOR
+[2026-09-07 11:16:57] ============================================================
+[2026-09-07 11:16:57]  Location    : c:\ScreenOCR
+[2026-09-07 11:16:57]  Machine     : MC-04 (Line: Line-01)
+[2026-09-07 11:16:57]  API URL     : http://127.0.0.1:1880/api/screen-ocr
+[2026-09-07 11:16:57]  Log CSV     : c:\ScreenOCR\ocr_log.csv
+[2026-09-07 11:16:57]  Sync Cycle  : 120.0s (2 minutes, background thread)
+[2026-09-07 11:16:57]  Active ROI  : X=1851, Y=1027, W=26, H=24
+[2026-09-07 11:16:57]  Tesseract   : C:\Program Files\Tesseract-OCR\tesseract.exe
+[2026-09-07 11:16:57] ============================================================
+[2026-09-07 11:16:57] [INFO] Live monitoring started. Press Ctrl+C in this window to stop.
+[2026-09-07 11:16:57] ------------------------------------------------------------
+[2026-09-07 11:16:57] [INFO] Offline sync background thread started (Interval: 120.0s / 2 mins).
+[2026-09-07 11:16:58] [11:16:58] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: None)
+[2026-09-07 11:17:00] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:17:00] [11:16:58] Detected:     16 | Prev:      - | API: CONNECTION_ERROR | CSV S.No: 92
+[2026-09-07 11:17:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:17:04] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:17:04] [11:17:01] Detected:     17 | Prev:     16 | API: PENDING          | CSV S.No: 93
+[2026-09-07 11:17:08] [11:17:08] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:12] [11:17:12] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:16] [11:17:16] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:20] [11:17:20] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:24] [11:17:24] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:28] [11:17:28] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:32] [11:17:32] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:37] [11:17:37] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:41] [11:17:41] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:45] [11:17:45] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:49] [11:17:49] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:53] [11:17:53] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:17:57] [11:17:57] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 11:18:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:18:03] [11:18:01] Detected:     18 | Prev:     17 | API: PENDING          | CSV S.No: 94
+[2026-09-07 11:18:07] [11:18:07] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:12] [11:18:12] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:16] [11:18:16] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:20] [11:18:20] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:24] [11:18:24] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:28] [11:18:28] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:32] [11:18:32] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:36] [11:18:36] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:40] [11:18:40] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:44] [11:18:44] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:49] [11:18:49] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:53] [11:18:53] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:18:57] [11:18:57] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 11:19:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:19:03] [11:19:01] Detected:     19 | Prev:     18 | API: PENDING          | CSV S.No: 95
+[2026-09-07 11:19:05] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:19:07] [11:19:07] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:11] [11:19:11] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:15] [11:19:15] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:19] [11:19:19] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:23] [11:19:23] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:28] [11:19:28] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:32] [11:19:32] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:36] [11:19:36] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:40] [11:19:40] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:44] [11:19:44] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:48] [11:19:48] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:52] [11:19:52] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:19:56] [11:19:56] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:20:01] [11:20:01] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 11:20:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:20:03] [11:20:01] Detected:     20 | Prev:     19 | API: PENDING          | CSV S.No: 96
+[2026-09-07 11:20:07] [11:20:07] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 20)
+[2026-09-07 11:20:11] [11:20:11] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 20)
+[2026-09-07 11:20:15] [11:20:15] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 20)
+[2026-09-07 11:20:19] [11:20:19] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 20)
+[2026-09-07 11:20:23] [11:20:23] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 20)
+[2026-09-07 11:20:28] [11:20:28] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 20)
+[2026-09-07 11:20:32] [11:20:32] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 20)
+[2026-09-07 11:20:36] [11:20:36] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 20)
+[2026-09-07 11:20:40] [11:20:40] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 20)
+[2026-09-07 11:20:44] [11:20:44] [READING] OCR sees: '20' | Waiting for stability / change (Last sent: 20)
+[2026-09-07 11:20:46] [CAPTURE LOOP EXCEPTION] Windows graphics function failed: BitBlt: The system cannot find the file specified.
+[2026-09-07 11:20:47] [CAPTURE LOOP EXCEPTION] Windows graphics function failed: BitBlt: The system cannot find the file specified.
+[2026-09-07 11:22:22] [CAPTURE LOOP EXCEPTION] Windows graphics function failed: BitBlt: The system cannot find the file specified.
+[2026-09-07 11:22:26] [11:22:26] [MONITORING] Watching ROI (X=1851, Y=1027)... Current Value: 20 (Waiting for next number)
+[2026-09-07 11:22:26] [CAPTURE LOOP EXCEPTION] Windows graphics function failed: BitBlt: The system cannot find the file specified.
+[2026-09-07 11:22:29] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:22:29] [11:22:27] Detected:     22 | Prev:     20 | API: PENDING          | CSV S.No: 97
+[2026-09-07 11:24:52] ============================================================
+[2026-09-07 11:24:52]             APLOS SCREEN OCR - LIVE MONITOR
+[2026-09-07 11:24:52] ============================================================
+[2026-09-07 11:24:52]  Location    : c:\ScreenOCR
+[2026-09-07 11:24:52]  Machine     : MC-04 (Line: Line-01)
+[2026-09-07 11:24:52]  API URL     : http://127.0.0.1:1880/api/screen-ocr
+[2026-09-07 11:24:52]  Log CSV     : c:\ScreenOCR\ocr_log.csv
+[2026-09-07 11:24:52]  Sync Cycle  : 120.0s (2 minutes, background thread)
+[2026-09-07 11:24:52]  Active ROI  : X=1851, Y=1027, W=26, H=24
+[2026-09-07 11:24:52]  Tesseract   : C:\Program Files\Tesseract-OCR\tesseract.exe
+[2026-09-07 11:24:52] ============================================================
+[2026-09-07 11:24:52] [INFO] Live monitoring started. Press Ctrl+C in this window to stop.
+[2026-09-07 11:24:52] ------------------------------------------------------------
+[2026-09-07 11:24:52] [INFO] Offline sync background thread started (Interval: 120.0s / 2 mins).
+[2026-09-07 11:24:53] [11:24:53] [READING] OCR sees: '24' | Waiting for stability / change (Last sent: None)
+[2026-09-07 11:24:55] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:24:55] [11:24:53] Detected:     24 | Prev:      - | API: PENDING          | CSV S.No: 98
+[2026-09-07 11:24:57] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:24:59] [11:24:59] [READING] OCR sees: '24' | Waiting for stability / change (Last sent: 24)
+[2026-09-07 11:25:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:25:03] [11:25:01] Detected:    254 | Prev:     24 | API: PENDING          | CSV S.No: 99
+[2026-09-07 11:25:07] [11:25:07] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:11] [11:25:11] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:15] [11:25:15] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:19] [11:25:19] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:23] [11:25:23] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:28] [11:25:28] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:32] [11:25:32] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:36] [11:25:36] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:40] [11:25:40] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:44] [11:25:44] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:48] [11:25:48] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:53] [11:25:53] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:25:57] [11:25:57] [READING] OCR sees: '254' | Waiting for stability / change (Last sent: 254)
+[2026-09-07 11:26:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:26:03] [11:26:01] Detected:     26 | Prev:    254 | API: PENDING          | CSV S.No: 100
+[2026-09-07 11:26:07] [11:26:07] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:11] [11:26:11] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:15] [11:26:15] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:20] [11:26:20] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:24] [11:26:24] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:28] [11:26:28] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:32] [11:26:32] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:36] [11:26:36] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:40] [11:26:40] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:44] [11:26:44] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:48] [11:26:48] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:52] [11:26:52] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:56] [11:26:56] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:26:59] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:27:00] [11:27:00] [READING] OCR sees: '26' | Waiting for stability / change (Last sent: 26)
+[2026-09-07 11:27:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:27:03] [11:27:01] Detected:     27 | Prev:     26 | API: PENDING          | CSV S.No: 101
+[2026-09-07 11:27:07] [11:27:07] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:11] [11:27:11] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:15] [11:27:15] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:19] [11:27:19] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:24] [11:27:24] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:28] [11:27:28] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:32] [11:27:32] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:36] [11:27:36] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:40] [11:27:40] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:44] [11:27:44] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:48] [11:27:48] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:53] [11:27:53] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:27:57] [11:27:57] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:28:01] [11:28:01] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 11:28:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:28:03] [11:28:01] Detected:     28 | Prev:     27 | API: PENDING          | CSV S.No: 102
+[2026-09-07 11:28:07] [11:28:07] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:11] [11:28:11] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:15] [11:28:15] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:19] [11:28:19] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:24] [11:28:24] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:28] [11:28:28] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:32] [11:28:32] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:36] [11:28:36] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:40] [11:28:40] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:44] [11:28:44] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:48] [11:28:48] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:52] [11:28:52] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:28:56] [11:28:56] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:29:00] [11:29:00] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 11:29:01] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:29:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:29:03] [11:29:01] Detected:     29 | Prev:     28 | API: PENDING          | CSV S.No: 103
+[2026-09-07 11:29:08] [11:29:08] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:12] [11:29:12] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:16] [11:29:16] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:20] [11:29:20] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:24] [11:29:24] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:28] [11:29:28] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:33] [11:29:33] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:37] [11:29:37] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:41] [11:29:41] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:45] [11:29:45] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:49] [11:29:49] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:53] [11:29:53] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:29:57] [11:29:57] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 11:30:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:30:03] [11:30:01] Detected:    304 | Prev:     29 | API: PENDING          | CSV S.No: 104
+[2026-09-07 11:30:07] [11:30:07] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:11] [11:30:11] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:15] [11:30:15] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:19] [11:30:19] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:23] [11:30:23] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:28] [11:30:28] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:32] [11:30:32] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:36] [11:30:36] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:40] [11:30:40] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:44] [11:30:44] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:48] [11:30:48] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:52] [11:30:52] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:30:56] [11:30:56] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:31:00] [11:31:00] [READING] OCR sees: '304' | Waiting for stability / change (Last sent: 304)
+[2026-09-07 11:31:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:31:03] [11:31:01] Detected:     31 | Prev:    304 | API: PENDING          | CSV S.No: 105
+[2026-09-07 11:31:05] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:31:07] [11:31:07] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:11] [11:31:11] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:15] [11:31:15] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:19] [11:31:19] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:23] [CAPTURE LOOP EXCEPTION] Windows graphics function failed: BitBlt: The system cannot find the file specified.
+[2026-09-07 11:31:24] [CAPTURE LOOP EXCEPTION] Windows graphics function failed: BitBlt: The system cannot find the file specified.
+[2026-09-07 11:31:25] [11:31:25] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:29] [11:31:29] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:33] [11:31:33] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:37] [11:31:37] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:41] [11:31:41] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:45] [11:31:45] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:50] [11:31:50] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:54] [11:31:54] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:31:58] [11:31:58] [READING] OCR sees: '31' | Waiting for stability / change (Last sent: 31)
+[2026-09-07 11:32:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:32:03] [11:32:01] Detected:    324 | Prev:     31 | API: PENDING          | CSV S.No: 106
+[2026-09-07 11:32:07] [11:32:07] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:11] [11:32:11] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:15] [11:32:15] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:20] [11:32:20] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:22] [CAPTURE LOOP EXCEPTION] Windows graphics function failed: BitBlt: The system cannot find the file specified.
+[2026-09-07 11:32:23] [CAPTURE LOOP EXCEPTION] Windows graphics function failed: BitBlt: The system cannot find the file specified.
+[2026-09-07 11:32:24] [11:32:24] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:28] [11:32:28] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:32] [11:32:32] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:37] [11:32:37] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:41] [11:32:41] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:45] [11:32:45] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:49] [11:32:49] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:53] [11:32:53] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:32:57] [11:32:57] [READING] OCR sees: '324' | Waiting for stability / change (Last sent: 324)
+[2026-09-07 11:33:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:33:03] [11:33:01] Detected:    334 | Prev:    324 | API: PENDING          | CSV S.No: 107
+[2026-09-07 11:33:07] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:33:07] [11:33:07] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:11] [11:33:11] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:16] [11:33:16] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:20] [11:33:20] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:24] [11:33:24] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:28] [11:33:28] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:32] [11:33:32] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:36] [11:33:36] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:40] [11:33:40] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:44] [11:33:44] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:48] [11:33:48] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:52] [11:33:52] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:33:57] [11:33:57] [READING] OCR sees: '334' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:34:01] [11:34:01] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 334)
+[2026-09-07 11:34:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:34:03] [11:34:01] Detected:     34 | Prev:    334 | API: PENDING          | CSV S.No: 108
+[2026-09-07 11:34:08] [11:34:08] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:12] [11:34:12] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:16] [11:34:16] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:20] [11:34:20] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:24] [11:34:24] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:29] [11:34:29] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:33] [11:34:33] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:37] [11:34:37] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:41] [11:34:41] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:45] [11:34:45] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:49] [11:34:49] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:53] [11:34:53] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:34:57] [11:34:57] [READING] OCR sees: '34' | Waiting for stability / change (Last sent: 34)
+[2026-09-07 11:36:46] ============================================================
+[2026-09-07 11:36:46]             APLOS SCREEN OCR - LIVE MONITOR
+[2026-09-07 11:36:46] ============================================================
+[2026-09-07 11:36:46]  Location    : c:\ScreenOCR
+[2026-09-07 11:36:46]  Machine     : MC-04 (Line: Line-01)
+[2026-09-07 11:36:46]  API URL     : http://127.0.0.1:1880/api/screen-ocr
+[2026-09-07 11:36:46]  Log CSV     : c:\ScreenOCR\ocr_log.csv
+[2026-09-07 11:36:46]  Sync Cycle  : 120.0s (2 minutes, background thread)
+[2026-09-07 11:36:46]  Active ROI  : X=1851, Y=1027, W=26, H=24
+[2026-09-07 11:36:46]  Tesseract   : C:\Program Files\Tesseract-OCR\tesseract.exe
+[2026-09-07 11:36:46] ============================================================
+[2026-09-07 11:36:46] [INFO] Live monitoring started. Press Ctrl+C in this window to stop.
+[2026-09-07 11:36:46] ------------------------------------------------------------
+[2026-09-07 11:36:46] [INFO] Offline sync background thread started (Interval: 120.0s / 2 mins).
+[2026-09-07 11:36:47] [11:36:47] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: None)
+[2026-09-07 11:36:49] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:36:49] [11:36:47] Detected:     36 | Prev:      - | API: PENDING          | CSV S.No: 109
+[2026-09-07 11:36:51] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:36:53] [11:36:53] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 11:36:57] [11:36:57] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 11:37:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:37:03] [11:37:01] Detected:     37 | Prev:     36 | API: PENDING          | CSV S.No: 110
+[2026-09-07 11:37:07] [11:37:07] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:11] [11:37:11] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:15] [11:37:15] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:19] [11:37:19] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:24] [11:37:24] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:28] [11:37:28] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:32] [11:37:32] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:36] [11:37:36] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:40] [11:37:40] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:44] [11:37:44] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:48] [11:37:48] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:52] [11:37:52] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:37:56] [11:37:56] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:38:01] [11:38:01] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 11:38:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:38:03] [11:38:01] Detected:     38 | Prev:     37 | API: PENDING          | CSV S.No: 111
+[2026-09-07 11:38:07] [11:38:07] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:11] [11:38:11] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:15] [11:38:15] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:19] [11:38:19] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:23] [11:38:23] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:27] [11:38:27] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:32] [11:38:32] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:36] [11:38:36] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:40] [11:38:40] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:44] [11:38:44] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:48] [11:38:48] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:52] [11:38:52] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:38:53] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:38:56] [11:38:56] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:39:00] [11:39:00] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 11:39:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:39:03] [11:39:01] Detected:     39 | Prev:     38 | API: PENDING          | CSV S.No: 112
+[2026-09-07 11:39:07] [11:39:07] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:11] [11:39:11] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:15] [11:39:15] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:19] [11:39:19] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:23] [11:39:23] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:27] [11:39:27] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:31] [11:39:31] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:36] [11:39:36] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:40] [11:39:40] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:44] [11:39:44] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:48] [11:39:48] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:52] [11:39:52] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:39:56] [11:39:56] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:40:01] [11:40:01] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 11:40:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:40:03] [11:40:01] Detected:     40 | Prev:     39 | API: PENDING          | CSV S.No: 113
+[2026-09-07 11:40:07] [11:40:07] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:11] [11:40:11] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:15] [11:40:15] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:19] [11:40:19] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:23] [11:40:23] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:28] [11:40:28] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:32] [11:40:32] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:36] [11:40:36] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:40] [11:40:40] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:44] [11:40:44] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:48] [11:40:48] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:52] [11:40:52] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:40:55] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:40:56] [11:40:56] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:41:01] [11:41:01] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 11:41:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:41:03] [11:41:01] Detected:     41 | Prev:     40 | API: PENDING          | CSV S.No: 114
+[2026-09-07 11:41:07] [11:41:07] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:11] [11:41:11] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:15] [11:41:15] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:19] [11:41:19] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:23] [11:41:23] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:27] [11:41:27] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:32] [11:41:32] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:36] [11:41:36] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:40] [11:41:40] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:44] [11:41:44] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:48] [11:41:48] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:52] [11:41:52] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:41:57] [11:41:57] [READING] OCR sees: '41' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:42:01] [11:42:01] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 41)
+[2026-09-07 11:42:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:42:03] [11:42:01] Detected:     42 | Prev:     41 | API: PENDING          | CSV S.No: 115
+[2026-09-07 11:42:07] [11:42:07] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:11] [11:42:11] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:15] [11:42:15] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:19] [11:42:19] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:23] [11:42:23] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:27] [11:42:27] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:31] [11:42:31] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:35] [11:42:35] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:40] [11:42:40] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:44] [11:42:44] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:48] [11:42:48] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:52] [11:42:52] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:56] [11:42:56] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:42:57] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:43:00] [11:43:00] [READING] OCR sees: '42' | Waiting for stability / change (Last sent: 42)
+[2026-09-07 11:43:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:43:03] [11:43:01] Detected:     43 | Prev:     42 | API: PENDING          | CSV S.No: 116
+[2026-09-07 11:43:07] [11:43:07] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:11] [11:43:11] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:15] [11:43:15] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:19] [11:43:19] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:24] [11:43:24] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:28] [11:43:28] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:32] [11:43:32] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:36] [11:43:36] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:40] [11:43:40] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:44] [11:43:44] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:48] [11:43:48] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:52] [11:43:52] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:43:56] [11:43:56] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:44:00] [11:44:00] [READING] OCR sees: '43' | Waiting for stability / change (Last sent: 43)
+[2026-09-07 11:44:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:44:03] [11:44:01] Detected:     44 | Prev:     43 | API: PENDING          | CSV S.No: 117
+[2026-09-07 11:44:07] [11:44:07] [READING] OCR sees: '44' | Waiting for stability / change (Last sent: 44)
+[2026-09-07 11:44:11] [11:44:11] [READING] OCR sees: '44' | Waiting for stability / change (Last sent: 44)
+[2026-09-07 11:50:00] ============================================================
+[2026-09-07 11:50:00]             APLOS SCREEN OCR - LIVE MONITOR
+[2026-09-07 11:50:00] ============================================================
+[2026-09-07 11:50:00]  Location    : c:\ScreenOCR
+[2026-09-07 11:50:00]  Machine     : MC-04 (Line: Line-01)
+[2026-09-07 11:50:00]  API URL     : http://127.0.0.1:1880/api/screen-ocr
+[2026-09-07 11:50:00]  Log CSV     : c:\ScreenOCR\ocr_log.csv
+[2026-09-07 11:50:00]  Sync Cycle  : 120.0s (2 minutes, background thread)
+[2026-09-07 11:50:00]  Active ROI  : X=1851, Y=1027, W=26, H=24
+[2026-09-07 11:50:00]  Tesseract   : C:\Program Files\Tesseract-OCR\tesseract.exe
+[2026-09-07 11:50:00] ============================================================
+[2026-09-07 11:50:00] [INFO] Live monitoring started. Press Ctrl+C in this window to stop.
+[2026-09-07 11:50:00] ------------------------------------------------------------
+[2026-09-07 11:50:00] [INFO] Offline sync background thread started (Interval: 120.0s / 2 mins).
+[2026-09-07 11:50:01] [11:50:01] [READING] OCR sees: '49' | Waiting for stability / change (Last sent: None)
+[2026-09-07 11:50:04] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:50:04] [11:50:02] Detected:     50 | Prev:      - | API: PENDING          | CSV S.No: 118
+[2026-09-07 11:50:06] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:50:08] [11:50:08] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:12] [11:50:12] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:16] [11:50:16] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:20] [11:50:20] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:24] [11:50:24] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:29] [11:50:29] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:33] [11:50:33] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:37] [11:50:37] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:41] [11:50:41] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:46] [11:50:46] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:51] [11:50:51] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:55] [11:50:55] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:50:59] [11:50:59] [READING] OCR sees: '50' | Waiting for stability / change (Last sent: 50)
+[2026-09-07 11:51:04] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:51:04] [11:51:02] Detected:     51 | Prev:     50 | API: PENDING          | CSV S.No: 119
+[2026-09-07 11:51:08] [11:51:08] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:12] [11:51:12] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:16] [11:51:16] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:21] [11:51:21] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:25] [11:51:25] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:29] [11:51:29] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:33] [11:51:33] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:37] [11:51:37] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:42] [11:51:42] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:46] [11:51:46] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:50] [11:51:50] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:54] [11:51:54] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:51:58] [11:51:58] [READING] OCR sees: '51' | Waiting for stability / change (Last sent: 51)
+[2026-09-07 11:52:04] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:52:04] [11:52:02] Detected:    524 | Prev:     51 | API: PENDING          | CSV S.No: 120
+[2026-09-07 11:52:08] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:52:09] [11:52:09] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:13] [11:52:13] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:17] [11:52:17] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:22] [11:52:22] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:26] [11:52:26] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:30] [11:52:30] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:35] [11:52:35] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:39] [11:52:39] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:43] [11:52:43] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:48] [11:52:48] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:52] [11:52:52] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:52:56] [11:52:56] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:53:00] [11:53:00] [READING] OCR sees: '524' | Waiting for stability / change (Last sent: 524)
+[2026-09-07 11:53:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:53:03] [11:53:01] Detected:    534 | Prev:    524 | API: PENDING          | CSV S.No: 121
+[2026-09-07 11:53:08] [11:53:08] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:12] [11:53:12] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:16] [11:53:16] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:21] [11:53:21] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:25] [11:53:25] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:30] [11:53:30] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:34] [11:53:34] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:38] [11:53:38] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:42] [11:53:42] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:47] [11:53:47] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:51] [11:53:51] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:55] [11:53:55] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:53:59] [11:53:59] [READING] OCR sees: '534' | Waiting for stability / change (Last sent: 534)
+[2026-09-07 11:54:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:54:03] [11:54:01] Detected:    544 | Prev:    534 | API: PENDING          | CSV S.No: 122
+[2026-09-07 11:54:07] [11:54:07] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:10] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:54:12] [11:54:12] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:16] [11:54:16] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:20] [11:54:20] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:24] [11:54:24] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:29] [11:54:29] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:33] [11:54:33] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:37] [11:54:37] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:41] [11:54:41] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:45] [11:54:45] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:49] [11:54:49] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:53] [11:54:53] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:54:57] [11:54:57] [READING] OCR sees: '544' | Waiting for stability / change (Last sent: 544)
+[2026-09-07 11:55:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:55:03] [11:55:01] Detected:    554 | Prev:    544 | API: PENDING          | CSV S.No: 123
+[2026-09-07 11:55:07] [11:55:07] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:11] [11:55:11] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:16] [11:55:16] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:20] [11:55:20] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:24] [11:55:24] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:28] [11:55:28] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:32] [11:55:32] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:36] [11:55:36] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:40] [11:55:40] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:45] [11:55:45] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:49] [11:55:49] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:53] [11:55:53] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:55:57] [11:55:57] [READING] OCR sees: '554' | Waiting for stability / change (Last sent: 554)
+[2026-09-07 11:56:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:56:03] [11:56:01] Detected:     56 | Prev:    554 | API: PENDING          | CSV S.No: 124
+[2026-09-07 11:56:07] [11:56:07] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:11] [11:56:11] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:12] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:56:16] [11:56:16] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:20] [11:56:20] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:24] [11:56:24] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:28] [11:56:28] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:32] [11:56:32] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:36] [11:56:36] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:40] [11:56:40] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:45] [11:56:45] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:49] [11:56:49] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:53] [11:56:53] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:56:57] [11:56:57] [READING] OCR sees: '56' | Waiting for stability / change (Last sent: 56)
+[2026-09-07 11:57:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:57:03] [11:57:01] Detected:     57 | Prev:     56 | API: PENDING          | CSV S.No: 125
+[2026-09-07 11:57:07] [11:57:07] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:11] [11:57:11] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:15] [11:57:15] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:20] [11:57:20] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:24] [11:57:24] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:28] [11:57:28] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:32] [11:57:32] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:36] [11:57:36] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:40] [11:57:40] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:45] [11:57:45] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:49] [11:57:49] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:53] [11:57:53] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:57:57] [11:57:57] [READING] OCR sees: '57' | Waiting for stability / change (Last sent: 57)
+[2026-09-07 11:58:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:58:02] [11:58:00] Detected:     58 | Prev:     57 | API: PENDING          | CSV S.No: 126
+[2026-09-07 11:58:06] [11:58:06] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:10] [11:58:10] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:14] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:58:14] [11:58:14] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:19] [11:58:19] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:23] [11:58:23] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:27] [11:58:27] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:31] [11:58:31] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:35] [11:58:35] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:39] [11:58:39] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:43] [11:58:43] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:48] [11:58:48] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:52] [11:58:52] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:58:56] [11:58:56] [READING] OCR sees: '58' | Waiting for stability / change (Last sent: 58)
+[2026-09-07 11:59:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 11:59:02] [11:59:00] Detected:     59 | Prev:     58 | API: PENDING          | CSV S.No: 127
+[2026-09-07 11:59:06] [11:59:06] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:10] [11:59:10] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:15] [11:59:15] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:19] [11:59:19] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:23] [11:59:23] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:27] [11:59:27] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:31] [11:59:31] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:35] [11:59:35] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:40] [11:59:40] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:44] [11:59:44] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:48] [11:59:48] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:52] [11:59:52] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 11:59:56] [11:59:56] [READING] OCR sees: '59' | Waiting for stability / change (Last sent: 59)
+[2026-09-07 12:00:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:00:02] [12:00:00] Detected:     00 | Prev:     59 | API: PENDING          | CSV S.No: 128
+[2026-09-07 12:00:06] [12:00:06] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:10] [12:00:10] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:14] [12:00:14] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:16] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:00:19] [12:00:19] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:23] [12:00:23] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:27] [12:00:27] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:31] [12:00:31] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:35] [12:00:35] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:39] [12:00:39] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:44] [12:00:44] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:48] [12:00:48] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:52] [12:00:52] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:00:56] [12:00:56] [READING] OCR sees: '00' | Waiting for stability / change (Last sent: 00)
+[2026-09-07 12:01:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:01:02] [12:01:00] Detected:     01 | Prev:     00 | API: PENDING          | CSV S.No: 129
+[2026-09-07 12:01:06] [12:01:06] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:10] [12:01:10] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:14] [12:01:14] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:19] [12:01:19] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:23] [12:01:23] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:27] [12:01:27] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:32] [12:01:32] [MONITORING] Watching ROI (X=1851, Y=1027)... Current Value: 01 (Waiting for next number)
+[2026-09-07 12:01:36] [12:01:36] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:41] [12:01:41] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:45] [12:01:45] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:49] [12:01:49] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:53] [12:01:53] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:01:57] [12:01:57] [READING] OCR sees: '01' | Waiting for stability / change (Last sent: 01)
+[2026-09-07 12:02:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:02:02] [12:02:00] Detected:     02 | Prev:     01 | API: PENDING          | CSV S.No: 130
+[2026-09-07 12:02:07] [12:02:07] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:11] [12:02:11] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:15] [12:02:15] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:18] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:02:19] [12:02:19] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:23] [12:02:23] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:27] [12:02:27] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:31] [12:02:31] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:36] [12:02:36] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:40] [12:02:40] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:44] [12:02:44] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:48] [12:02:48] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:52] [12:02:52] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:02:56] [12:02:56] [READING] OCR sees: '02' | Waiting for stability / change (Last sent: 02)
+[2026-09-07 12:03:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:03:03] [12:03:01] Detected:     03 | Prev:     02 | API: PENDING          | CSV S.No: 131
+[2026-09-07 12:03:07] [12:03:07] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:11] [12:03:11] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:15] [12:03:15] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:19] [12:03:19] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:24] [12:03:24] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:28] [12:03:28] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:32] [12:03:32] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:36] [12:03:36] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:40] [12:03:40] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:45] [12:03:45] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:49] [12:03:49] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:53] [12:03:53] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:03:57] [12:03:57] [READING] OCR sees: '03' | Waiting for stability / change (Last sent: 03)
+[2026-09-07 12:04:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:04:02] [12:04:00] Detected:     04 | Prev:     03 | API: PENDING          | CSV S.No: 132
+[2026-09-07 12:04:06] [12:04:06] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:11] [12:04:11] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:15] [12:04:15] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:19] [12:04:19] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:21] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:04:23] [12:04:23] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:27] [12:04:27] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:31] [12:04:31] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:36] [12:04:36] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:40] [12:04:40] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:44] [12:04:44] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:48] [12:04:48] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:52] [12:04:52] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:04:56] [12:04:56] [READING] OCR sees: '04' | Waiting for stability / change (Last sent: 04)
+[2026-09-07 12:05:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:05:02] [12:05:00] Detected:     05 | Prev:     04 | API: PENDING          | CSV S.No: 133
+[2026-09-07 12:05:06] [12:05:06] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:10] [12:05:10] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:15] [12:05:15] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:19] [12:05:19] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:23] [12:05:23] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:27] [12:05:27] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:31] [12:05:31] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:35] [12:05:35] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:39] [12:05:39] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:43] [12:05:43] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:48] [12:05:48] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:52] [12:05:52] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:05:56] [12:05:56] [READING] OCR sees: '05' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:06:00] [12:06:00] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 05)
+[2026-09-07 12:06:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:06:03] [12:06:01] Detected:     06 | Prev:     05 | API: PENDING          | CSV S.No: 134
+[2026-09-07 12:06:07] [12:06:07] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:11] [12:06:11] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:15] [12:06:15] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:19] [12:06:19] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:23] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:06:23] [12:06:23] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:28] [12:06:28] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:32] [12:06:32] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:36] [12:06:36] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:40] [12:06:40] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:44] [12:06:44] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:48] [12:06:48] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:52] [12:06:52] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:06:56] [12:06:56] [READING] OCR sees: '06' | Waiting for stability / change (Last sent: 06)
+[2026-09-07 12:07:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:07:02] [12:07:00] Detected:     07 | Prev:     06 | API: PENDING          | CSV S.No: 135
+[2026-09-07 12:07:06] [12:07:06] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:10] [12:07:10] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:14] [12:07:14] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:18] [12:07:18] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:23] [12:07:23] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:27] [12:07:27] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:31] [12:07:31] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:35] [12:07:35] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:39] [12:07:39] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:44] [12:07:44] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:48] [12:07:48] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:52] [12:07:52] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:07:56] [12:07:56] [READING] OCR sees: '07' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:08:00] [12:08:00] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 07)
+[2026-09-07 12:08:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:08:02] [12:08:00] Detected:     08 | Prev:     07 | API: PENDING          | CSV S.No: 136
+[2026-09-07 12:08:06] [12:08:06] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:10] [12:08:10] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:15] [12:08:15] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:19] [12:08:19] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:23] [12:08:23] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:25] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:08:27] [12:08:27] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:31] [12:08:31] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:35] [12:08:35] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:39] [12:08:39] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:44] [12:08:44] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:48] [12:08:48] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:52] [12:08:52] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:08:56] [12:08:56] [READING] OCR sees: '08' | Waiting for stability / change (Last sent: 08)
+[2026-09-07 12:09:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:09:02] [12:09:00] Detected:     09 | Prev:     08 | API: PENDING          | CSV S.No: 137
+[2026-09-07 12:09:06] [12:09:06] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:10] [12:09:10] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:14] [12:09:14] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:18] [12:09:18] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:23] [12:09:23] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:27] [12:09:27] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:31] [12:09:31] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:35] [12:09:35] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:39] [12:09:39] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:44] [12:09:44] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:48] [12:09:48] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:52] [12:09:52] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:09:57] [12:09:57] [READING] OCR sees: '09' | Waiting for stability / change (Last sent: 09)
+[2026-09-07 12:10:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:10:03] [12:10:01] Detected:     10 | Prev:     09 | API: PENDING          | CSV S.No: 138
+[2026-09-07 12:10:07] [12:10:07] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:11] [12:10:11] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:15] [12:10:15] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:20] [12:10:20] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:24] [12:10:24] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:27] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:10:28] [12:10:28] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:32] [12:10:32] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:37] [12:10:37] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:41] [12:10:41] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:45] [12:10:45] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:49] [12:10:49] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:53] [12:10:53] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:10:58] [12:10:58] [READING] OCR sees: '10' | Waiting for stability / change (Last sent: 10)
+[2026-09-07 12:11:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:11:03] [12:11:01] Detected:    111 | Prev:     10 | API: PENDING          | CSV S.No: 139
+[2026-09-07 12:11:07] [12:11:07] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:11] [12:11:11] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:16] [12:11:16] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:20] [12:11:20] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:24] [12:11:24] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:28] [12:11:28] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:33] [12:11:33] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:37] [12:11:37] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:41] [12:11:41] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:46] [12:11:46] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:50] [12:11:50] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:54] [12:11:54] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:11:58] [12:11:58] [READING] OCR sees: '111' | Waiting for stability / change (Last sent: 111)
+[2026-09-07 12:12:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:12:03] [12:12:01] Detected:     12 | Prev:    111 | API: PENDING          | CSV S.No: 140
+[2026-09-07 12:12:07] [12:12:07] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:12] [12:12:12] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:16] [12:12:16] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:20] [12:12:20] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:25] [12:12:25] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:29] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:12:29] [12:12:29] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:33] [12:12:33] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:37] [12:12:37] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:42] [12:12:42] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:46] [12:12:46] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:50] [12:12:50] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:54] [12:12:54] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:12:59] [12:12:59] [READING] OCR sees: '12' | Waiting for stability / change (Last sent: 12)
+[2026-09-07 12:13:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:13:03] [12:13:01] Detected:    131 | Prev:     12 | API: PENDING          | CSV S.No: 141
+[2026-09-07 12:13:07] [12:13:07] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:11] [12:13:11] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:16] [12:13:16] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:20] [12:13:20] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:24] [12:13:24] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:28] [12:13:28] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:32] [12:13:32] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:37] [12:13:37] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:41] [12:13:41] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:45] [12:13:45] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:49] [12:13:49] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:53] [12:13:53] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:13:58] [12:13:58] [READING] OCR sees: '131' | Waiting for stability / change (Last sent: 131)
+[2026-09-07 12:14:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:14:02] [12:14:00] Detected:    141 | Prev:    131 | API: PENDING          | CSV S.No: 142
+[2026-09-07 12:14:06] [12:14:06] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:06] [CAPTURE LOOP EXCEPTION] Windows graphics function failed: BitBlt: The system cannot find the file specified.
+[2026-09-07 12:14:07] [CAPTURE LOOP EXCEPTION] Windows graphics function failed: BitBlt: The system cannot find the file specified.
+[2026-09-07 12:14:10] [12:14:10] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:15] [12:14:15] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:19] [12:14:19] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:23] [12:14:23] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:27] [12:14:27] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:31] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:14:31] [12:14:31] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:35] [12:14:35] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:40] [12:14:40] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:44] [12:14:44] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:48] [12:14:48] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:52] [12:14:52] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:14:56] [12:14:56] [READING] OCR sees: '141' | Waiting for stability / change (Last sent: 141)
+[2026-09-07 12:15:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:15:02] [12:15:00] Detected:    151 | Prev:    141 | API: PENDING          | CSV S.No: 143
+[2026-09-07 12:15:06] [12:15:06] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:10] [12:15:10] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:15] [12:15:15] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:19] [12:15:19] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:23] [12:15:23] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:27] [12:15:27] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:31] [12:15:31] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:36] [12:15:36] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:40] [12:15:40] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:44] [12:15:44] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:48] [12:15:48] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:52] [12:15:52] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:15:56] [12:15:56] [READING] OCR sees: '151' | Waiting for stability / change (Last sent: 151)
+[2026-09-07 12:16:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:16:02] [12:16:00] Detected:     16 | Prev:    151 | API: PENDING          | CSV S.No: 144
+[2026-09-07 12:16:07] [12:16:07] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:11] [12:16:11] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:15] [12:16:15] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:19] [12:16:19] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:23] [12:16:23] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:27] [12:16:27] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:31] [12:16:31] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:33] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:16:35] [12:16:35] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:40] [12:16:40] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:44] [12:16:44] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:48] [12:16:48] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:52] [12:16:52] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:16:56] [12:16:56] [READING] OCR sees: '16' | Waiting for stability / change (Last sent: 16)
+[2026-09-07 12:17:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:17:02] [12:17:00] Detected:     17 | Prev:     16 | API: PENDING          | CSV S.No: 145
+[2026-09-07 12:17:07] [12:17:07] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:11] [12:17:11] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:15] [12:17:15] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:19] [12:17:19] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:23] [12:17:23] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:27] [12:17:27] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:31] [12:17:31] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:35] [12:17:35] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:39] [12:17:39] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:43] [12:17:43] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:48] [12:17:48] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:52] [12:17:52] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:17:56] [12:17:56] [READING] OCR sees: '17' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:18:00] [12:18:00] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 17)
+[2026-09-07 12:18:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:18:02] [12:18:00] Detected:     18 | Prev:     17 | API: PENDING          | CSV S.No: 146
+[2026-09-07 12:18:07] [12:18:07] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:11] [12:18:11] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:15] [12:18:15] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:19] [12:18:19] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:24] [12:18:24] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:28] [12:18:28] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:32] [12:18:32] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:35] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:18:36] [12:18:36] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:41] [12:18:41] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:45] [12:18:45] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:49] [12:18:49] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:53] [12:18:53] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:18:58] [12:18:58] [READING] OCR sees: '18' | Waiting for stability / change (Last sent: 18)
+[2026-09-07 12:19:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:19:03] [12:19:01] Detected:     19 | Prev:     18 | API: PENDING          | CSV S.No: 147
+[2026-09-07 12:19:07] [12:19:07] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:12] [12:19:12] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:16] [12:19:16] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:20] [12:19:20] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:24] [12:19:24] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:29] [12:19:29] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:33] [12:19:33] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:37] [12:19:37] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:41] [12:19:41] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:45] [12:19:45] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:50] [12:19:50] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:55] [12:19:55] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:19:59] [12:19:59] [READING] OCR sees: '19' | Waiting for stability / change (Last sent: 19)
+[2026-09-07 12:20:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:20:03] [12:20:01] Detected:    720 | Prev:     19 | API: PENDING          | CSV S.No: 148
+[2026-09-07 12:20:07] [12:20:07] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:11] [12:20:11] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:15] [12:20:15] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:20] [12:20:20] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:24] [12:20:24] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:28] [12:20:28] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:32] [12:20:32] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:36] [12:20:36] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:37] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:20:41] [12:20:41] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:45] [12:20:45] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:49] [12:20:49] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:54] [12:20:54] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:20:58] [12:20:58] [READING] OCR sees: '720' | Waiting for stability / change (Last sent: 720)
+[2026-09-07 12:21:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:21:03] [12:21:01] Detected:    211 | Prev:    720 | API: PENDING          | CSV S.No: 149
+[2026-09-07 12:21:07] [12:21:07] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:11] [12:21:11] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:16] [12:21:16] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:20] [12:21:20] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:24] [12:21:24] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:28] [12:21:28] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:32] [12:21:32] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:36] [12:21:36] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:40] [12:21:40] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:44] [12:21:44] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:48] [12:21:48] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:53] [12:21:53] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:21:57] [12:21:57] [READING] OCR sees: '211' | Waiting for stability / change (Last sent: 211)
+[2026-09-07 12:22:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:22:03] [12:22:01] Detected:      2 | Prev:    211 | API: PENDING          | CSV S.No: 150
+[2026-09-07 12:22:07] [12:22:07] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:11] [12:22:11] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:15] [12:22:15] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:19] [12:22:19] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:24] [12:22:24] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:28] [12:22:28] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:32] [12:22:32] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:36] [12:22:36] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:40] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:22:40] [12:22:40] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:45] [12:22:45] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:49] [12:22:49] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:53] [12:22:53] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:22:57] [12:22:57] [READING] OCR sees: '2' | Waiting for stability / change (Last sent: 2)
+[2026-09-07 12:23:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:23:03] [12:23:01] Detected:     23 | Prev:      2 | API: PENDING          | CSV S.No: 151
+[2026-09-07 12:23:07] [12:23:07] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:11] [12:23:11] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:15] [12:23:15] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:20] [12:23:20] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:24] [12:23:24] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:28] [12:23:28] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:32] [12:23:32] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:36] [12:23:36] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:40] [12:23:40] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:44] [12:23:44] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:49] [12:23:49] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:53] [12:23:53] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:23:58] [12:23:58] [READING] OCR sees: '23' | Waiting for stability / change (Last sent: 23)
+[2026-09-07 12:24:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:24:03] [12:24:00] Detected:    724 | Prev:     23 | API: PENDING          | CSV S.No: 152
+[2026-09-07 12:24:07] [12:24:07] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:11] [12:24:11] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:15] [12:24:15] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:19] [12:24:19] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:23] [12:24:23] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:28] [12:24:28] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:32] [12:24:32] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:36] [12:24:36] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:40] [12:24:40] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:42] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:24:45] [12:24:45] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:49] [12:24:49] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:53] [12:24:53] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:24:57] [12:24:57] [READING] OCR sees: '724' | Waiting for stability / change (Last sent: 724)
+[2026-09-07 12:25:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:25:02] [12:25:00] Detected:     29 | Prev:    724 | API: PENDING          | CSV S.No: 153
+[2026-09-07 12:25:07] [12:25:07] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:11] [12:25:11] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:15] [12:25:15] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:19] [12:25:19] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:24] [12:25:24] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:28] [12:25:28] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:32] [12:25:32] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:36] [12:25:36] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:40] [12:25:40] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:44] [12:25:44] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:48] [12:25:48] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:53] [12:25:53] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:25:57] [12:25:57] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:26:02] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:26:02] [12:26:00] Detected:    726 | Prev:     29 | API: PENDING          | CSV S.No: 154
+[2026-09-07 12:26:07] [12:26:07] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:11] [12:26:11] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:15] [12:26:15] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:19] [12:26:19] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:23] [12:26:23] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:28] [12:26:28] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:32] [12:26:32] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:36] [12:26:36] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:40] [12:26:40] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:44] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:26:44] [12:26:44] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:48] [12:26:48] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:52] [12:26:52] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:26:57] [12:26:57] [READING] OCR sees: '726' | Waiting for stability / change (Last sent: 726)
+[2026-09-07 12:27:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:27:03] [12:27:01] Detected:     27 | Prev:    726 | API: PENDING          | CSV S.No: 155
+[2026-09-07 12:27:07] [12:27:07] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:11] [12:27:11] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:15] [12:27:15] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:19] [12:27:19] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:23] [12:27:23] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:27] [12:27:27] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:32] [12:27:32] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:36] [12:27:36] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:40] [12:27:40] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:44] [12:27:44] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:49] [12:27:49] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:53] [12:27:53] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:27:57] [12:27:57] [READING] OCR sees: '27' | Waiting for stability / change (Last sent: 27)
+[2026-09-07 12:28:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:28:03] [12:28:01] Detected:     28 | Prev:     27 | API: PENDING          | CSV S.No: 156
+[2026-09-07 12:28:07] [12:28:07] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:12] [12:28:12] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:16] [12:28:16] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:20] [12:28:20] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:24] [12:28:24] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:28] [12:28:28] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:32] [12:28:32] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:36] [12:28:36] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:40] [12:28:40] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:45] [12:28:45] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:46] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:28:49] [12:28:49] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:53] [12:28:53] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:28:57] [12:28:57] [READING] OCR sees: '28' | Waiting for stability / change (Last sent: 28)
+[2026-09-07 12:29:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:29:03] [12:29:01] Detected:     29 | Prev:     28 | API: PENDING          | CSV S.No: 157
+[2026-09-07 12:29:07] [12:29:07] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:11] [12:29:11] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:15] [12:29:15] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:19] [12:29:19] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:23] [12:29:23] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:28] [12:29:28] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:32] [12:29:32] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:36] [12:29:36] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:40] [12:29:40] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:44] [12:29:44] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:48] [12:29:48] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:52] [12:29:52] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:29:56] [12:29:56] [READING] OCR sees: '29' | Waiting for stability / change (Last sent: 29)
+[2026-09-07 12:30:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:30:03] [12:30:01] Detected:     30 | Prev:     29 | API: PENDING          | CSV S.No: 158
+[2026-09-07 12:30:07] [12:30:07] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:11] [12:30:11] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:15] [12:30:15] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:19] [12:30:19] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:24] [12:30:24] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:28] [12:30:28] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:32] [12:30:32] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:36] [12:30:36] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:40] [12:30:40] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:44] [12:30:44] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:48] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:30:48] [12:30:48] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:52] [12:30:52] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:30:56] [12:30:56] [READING] OCR sees: '30' | Waiting for stability / change (Last sent: 30)
+[2026-09-07 12:31:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:31:03] [12:31:01] Detected:    311 | Prev:     30 | API: PENDING          | CSV S.No: 159
+[2026-09-07 12:31:07] [12:31:07] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:11] [12:31:11] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:15] [12:31:15] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:19] [12:31:19] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:24] [12:31:24] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:28] [12:31:28] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:32] [12:31:32] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:36] [12:31:36] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:41] [12:31:41] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:45] [12:31:45] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:49] [12:31:49] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:53] [12:31:53] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:31:57] [12:31:57] [READING] OCR sees: '311' | Waiting for stability / change (Last sent: 311)
+[2026-09-07 12:32:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:32:03] [12:32:01] Detected:     32 | Prev:    311 | API: PENDING          | CSV S.No: 160
+[2026-09-07 12:32:07] [12:32:07] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:11] [12:32:11] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:16] [12:32:16] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:20] [12:32:20] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:24] [12:32:24] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:29] [12:32:29] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:33] [12:32:33] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:37] [12:32:37] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:41] [12:32:41] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:45] [12:32:45] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:49] [12:32:49] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:50] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:32:53] [12:32:53] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:32:57] [12:32:57] [READING] OCR sees: '32' | Waiting for stability / change (Last sent: 32)
+[2026-09-07 12:33:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:33:03] [12:33:01] Detected:     33 | Prev:     32 | API: PENDING          | CSV S.No: 161
+[2026-09-07 12:33:07] [12:33:07] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:12] [12:33:12] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:16] [12:33:16] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:20] [12:33:20] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:24] [12:33:24] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:28] [12:33:28] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:33] [12:33:32] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:37] [12:33:37] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:41] [12:33:41] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:45] [12:33:45] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:49] [12:33:49] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:53] [12:33:53] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:33:58] [12:33:58] [READING] OCR sees: '33' | Waiting for stability / change (Last sent: 33)
+[2026-09-07 12:34:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:34:03] [12:34:01] Detected:    734 | Prev:     33 | API: PENDING          | CSV S.No: 162
+[2026-09-07 12:34:07] [12:34:07] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:11] [12:34:11] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:15] [12:34:15] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:20] [12:34:20] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:24] [12:34:24] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:28] [12:34:28] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:32] [12:34:32] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:36] [12:34:36] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:41] [12:34:41] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:45] [12:34:45] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:49] [12:34:49] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:52] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:34:53] [12:34:53] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:34:58] [12:34:58] [READING] OCR sees: '734' | Waiting for stability / change (Last sent: 734)
+[2026-09-07 12:35:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:35:03] [12:35:01] Detected:     35 | Prev:    734 | API: PENDING          | CSV S.No: 163
+[2026-09-07 12:35:07] [12:35:07] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:11] [12:35:11] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:16] [12:35:16] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:20] [12:35:20] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:25] [12:35:25] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:29] [12:35:29] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:33] [12:35:33] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:37] [12:35:37] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:41] [12:35:41] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:45] [12:35:45] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:50] [12:35:50] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:54] [12:35:54] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:35:58] [12:35:58] [READING] OCR sees: '35' | Waiting for stability / change (Last sent: 35)
+[2026-09-07 12:36:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:36:03] [12:36:01] Detected:     36 | Prev:     35 | API: PENDING          | CSV S.No: 164
+[2026-09-07 12:36:07] [12:36:07] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:11] [12:36:11] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:16] [12:36:16] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:20] [12:36:20] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:24] [12:36:24] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:28] [12:36:28] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:32] [12:36:32] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:36] [12:36:36] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:40] [12:36:40] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:44] [12:36:44] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:48] [12:36:48] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:53] [12:36:53] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:36:54] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:36:57] [12:36:57] [READING] OCR sees: '36' | Waiting for stability / change (Last sent: 36)
+[2026-09-07 12:37:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:37:03] [12:37:01] Detected:     37 | Prev:     36 | API: PENDING          | CSV S.No: 165
+[2026-09-07 12:37:07] [12:37:07] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:11] [12:37:11] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:16] [12:37:16] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:20] [12:37:20] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:24] [12:37:24] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:28] [12:37:28] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:33] [12:37:33] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:37] [12:37:37] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:41] [12:37:41] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:45] [12:37:45] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:50] [12:37:50] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:54] [12:37:54] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:37:58] [12:37:58] [READING] OCR sees: '37' | Waiting for stability / change (Last sent: 37)
+[2026-09-07 12:38:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:38:03] [12:38:01] Detected:     38 | Prev:     37 | API: PENDING          | CSV S.No: 166
+[2026-09-07 12:38:07] [12:38:07] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:12] [12:38:12] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:16] [12:38:16] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:20] [12:38:20] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:24] [12:38:24] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:29] [12:38:29] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:33] [12:38:33] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:37] [12:38:37] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:41] [12:38:41] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:45] [12:38:45] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:50] [12:38:50] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:54] [12:38:54] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:38:56] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:38:58] [12:38:58] [READING] OCR sees: '38' | Waiting for stability / change (Last sent: 38)
+[2026-09-07 12:39:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:39:03] [12:39:01] Detected:     39 | Prev:     38 | API: PENDING          | CSV S.No: 167
+[2026-09-07 12:39:07] [12:39:07] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:11] [12:39:11] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:15] [12:39:15] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:19] [12:39:19] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:24] [12:39:24] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:28] [12:39:28] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:32] [12:39:32] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:36] [12:39:36] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:40] [12:39:40] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:45] [12:39:45] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:49] [12:39:49] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:53] [12:39:53] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:39:57] [12:39:57] [READING] OCR sees: '39' | Waiting for stability / change (Last sent: 39)
+[2026-09-07 12:40:03] [SYNC NOTICE] Server is currently offline. Pending records preserved locally in CSV.
+[2026-09-07 12:40:03] [12:40:01] Detected:     40 | Prev:     39 | API: PENDING          | CSV S.No: 168
+[2026-09-07 12:40:07] [12:40:07] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:11] [12:40:11] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:16] [12:40:16] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:20] [12:40:20] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:24] [12:40:24] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:28] [12:40:28] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:33] [12:40:33] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:37] [12:40:37] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:41] [12:40:41] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:45] [12:40:45] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:50] [12:40:50] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
+[2026-09-07 12:40:54] [12:40:54] [READING] OCR sees: '40' | Waiting for stability / change (Last sent: 40)
